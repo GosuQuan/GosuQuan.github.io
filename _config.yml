@@ -21,9 +21,7 @@ highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "t
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
 title   : 阿权的博客
-description: > # this means to ignore newlines until "Language & timezone"
-  博客的创造是为了记录生活中的点滴和灵感，一些事情联想到的，没有在朋友圈发的一些思考和想法
-  都会在这里，博客是为自己而记录的，是主观的。长此以往地看见自己对每一行代码更加清晰，慢慢摸索人生的定位。
+description: > # this means to ignore newlines until "Language & timezone"博客的创造是为了记录生活中的点滴和灵感，一些事情联想到的，没有在朋友圈发的一些思考和想法.都会在这里，博客是为自己而记录的，是主观的。长此以往地看见自己对每一行代码更加清晰，慢慢摸索人生的定位。
 
 
 ## => Language and Timezone

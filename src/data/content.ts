@@ -27,6 +27,32 @@ export const featuredProject = {
     { label: '购物车→打赏流程', href: 'http://117.72.122.109:3088/tip' },
     { label: 'Shopify Liquid 交付包', href: 'https://github.com/GosuQuan/seo-geo-commerce/tree/main/docs/shopify' },
   ],
+  demos: [
+    {
+      src: '/demos/home.jpg',
+      title: '首页 · Answer-first + 商品 3D',
+      body: '首屏先给可引用的短结论，右侧是可拖的 R3F 商品场景；底部标签把 JSON-LD、Facts API、llms.txt 等能力摊开给访客。',
+      href: 'http://117.72.122.109:3088/',
+    },
+    {
+      src: '/demos/products.jpg',
+      title: '商品列表 · 单一事实源',
+      body: '列表、详情页文案和 JSON-LD 共用同一套商品数据，改价格规格只动一处，避免页面和结构化数据两套稿对不上。',
+      href: 'http://117.72.122.109:3088/products',
+    },
+    {
+      src: '/demos/audit.jpg',
+      title: 'GEO 审计 · 可打分检查',
+      body: '按路由跑 Answer-first、Product JSON-LD、FAQ、Sitemap 等清单，示例商品页可拿到满分 A，改完立刻能自查。',
+      href: 'http://117.72.122.109:3088/audit',
+    },
+    {
+      src: '/demos/effects.jpg',
+      title: '动效实验室 · 按路由懒加载',
+      body: 'Motion / GSAP / Lottie / R3F 各自独立 demo 页，dynamic 懒加载，实验室再炫也不进商城首页主包。',
+      href: 'http://117.72.122.109:3088/effects',
+    },
+  ],
   talkingPoints: [
     {
       title: 'Answer-first / GEO',

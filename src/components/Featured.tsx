@@ -14,28 +14,75 @@ export function Featured() {
       <Reveal tone="scale" delay={0.08} className="mt-8">
         <article className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl sm:p-8">
           <p className="max-w-3xl text-sm leading-7 text-slate-300">{p.description}</p>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {p.talkingPoints.slice(0, 3).map((tp, i) => (
-              <Reveal key={tp.title} tone={i === 1 ? 'fade-up' : i === 0 ? 'fade-left' : 'fade-right'} delay={0.05 * i}>
-                <div className="h-full rounded-2xl border border-white/10 bg-black/25 p-4 backdrop-blur">
-                  <h3 className="text-sm font-medium text-white">{tp.title}</h3>
-                  <p className="mt-2 text-xs leading-6 text-slate-400">{tp.body}</p>
-                </div>
-              </Reveal>
-            ))}
+
+          <div className="mt-10 space-y-10">
+            {p.demos.map((demo, i) => {
+              const reverse = i % 2 === 1
+              return (
+                <Reveal key={demo.src} tone={reverse ? 'fade-right' : 'fade-left'} delay={0.04 * i}>
+                  <a
+                    href={demo.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`group flex flex-col gap-5 md:items-center md:gap-8 ${
+                      reverse ? 'md:flex-row-reverse' : 'md:flex-row'
+                    }`}
+                  >
+                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_12px_40px_rgba(0,0,0,0.35)] md:w-[58%]">
+                      <img
+                        src={demo.src}
+                        alt={demo.title}
+                        loading="lazy"
+                        className="aspect-[16/10] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                    <div className="md:w-[42%]">
+                      <p className="text-[11px] tracking-[0.18em] text-slate-500 uppercase">
+                        Demo {String(i + 1).padStart(2, '0')}
+                      </p>
+                      <h3 className="mt-2 text-lg font-medium text-white group-hover:text-zinc-100">
+                        {demo.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-400">{demo.body}</p>
+                      <span className="mt-4 inline-flex text-xs text-slate-500 transition group-hover:text-slate-300">
+                        打开对应页面 →
+                      </span>
+                    </div>
+                  </a>
+                </Reveal>
+              )
+            })}
           </div>
-          <div className="mt-6 flex flex-wrap gap-2">
+
+          <div className="mt-10 flex flex-wrap gap-2">
             {p.highlights.map((h) => (
-              <a key={h.label} href={h.href} target="_blank" rel="noreferrer" className="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300 ring-1 ring-white/10 hover:bg-white/10">
+              <a
+                key={h.label}
+                href={h.href}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300 ring-1 ring-white/10 hover:bg-white/10"
+              >
                 {h.label}
               </a>
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={p.demo} target="_blank" rel="noreferrer" className="rounded-full bg-[#f4f4f5] px-4 py-2 text-sm font-semibold hover:bg-white" style={{ color: "#09090b" }}>
+            <a
+              href={p.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-[#f4f4f5] px-4 py-2 text-sm font-semibold hover:bg-white"
+              style={{ color: '#09090b' }}
+            >
               打开演示
             </a>
-            <a href={p.repo} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm text-slate-300">
+            <a
+              href={p.repo}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-white/15 px-4 py-2 text-sm text-slate-300"
+            >
               GitHub 仓库
             </a>
           </div>

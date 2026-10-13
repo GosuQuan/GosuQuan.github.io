@@ -46,7 +46,7 @@ export function Hero() {
     return (
       <section id="about" className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:min-h-[78vh] sm:px-5 sm:pb-20 sm:pt-28">
         <div className="max-w-2xl">
-          <p className="text-[11px] tracking-[0.2em] text-slate-400 uppercase sm:text-xs sm:tracking-[0.24em]">Portfolio for interviews</p>
+          <p className="text-[11px] tracking-[0.2em] text-slate-400 uppercase sm:text-xs sm:tracking-[0.24em]">Personal portfolio</p>
           <h1 className="mt-2.5 text-[2.15rem] font-semibold leading-[1.12] tracking-tight text-white sm:mt-5 sm:text-6xl">{profile.name}</h1>
           <p className="mt-2 text-[15px] leading-snug text-slate-300 sm:mt-3 sm:text-xl">{profile.tagline}</p>
           <p className="mt-3 text-[14px] leading-6 text-slate-400 sm:mt-6 sm:text-base sm:leading-7">
@@ -62,7 +62,7 @@ export function Hero() {
     <section id="about" className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:min-h-[78vh] sm:px-5 sm:pb-20 sm:pt-28">
       <div className="max-w-2xl">
         <motion.p custom={0} variants={fade} initial="hidden" animate="show" className="text-[11px] tracking-[0.2em] text-slate-400 uppercase sm:text-xs sm:tracking-[0.24em]">
-          Portfolio for interviews
+          Personal portfolio
         </motion.p>
         <motion.h1 custom={1} variants={fade} initial="hidden" animate="show" className="mt-2.5 text-[2.15rem] font-semibold leading-[1.12] tracking-tight text-white sm:mt-5 sm:text-6xl">
           {profile.name}

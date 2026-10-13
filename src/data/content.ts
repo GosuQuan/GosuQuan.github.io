@@ -3,8 +3,8 @@ export const profile = {
   handle: 'thisiskingsley',
   tagline: '全栈 · SEO/GEO · 开源与工程交付',
   blurb:
-    '这里主要放我做过的开源。面试时能顺着项目讲清楚取舍和落地，不靠堆技术名词。',
-  blurbShort: '开源项目为主，面试能讲清取舍。',
+    '这里主要放我做过的开源，顺着项目能讲清取舍和落地，不靠堆技术名词。',
+  blurbShort: '开源项目为主，讲清取舍与落地。',
   github: 'https://github.com/GosuQuan',
   email: '',
 }
@@ -14,7 +14,7 @@ export const featuredProject = {
   name: 'TrailForge 峰途',
   subtitle: '开源电商演示 · SEO/GEO',
   description:
-    '可 fork 的店面和 Shopify 交付包。面试我一般就讲三件事：答案怎么写在首屏、商品事实怎么只维护一份、重动效怎么不拖首页。',
+    '可 fork 的店面和 Shopify 交付包。项目里我重点做了三件事：答案怎么写在首屏、商品事实怎么只维护一份、重动效怎么不拖首页。',
   demo: 'http://117.72.122.109:3088/',
   repo: 'https://github.com/GosuQuan/seo-geo-commerce',
   highlights: [
@@ -51,7 +51,7 @@ export const featuredProject = {
 export const openSource = [
   {
     name: 'seo-geo-commerce',
-    desc: 'SEO+GEO 电商 Demo · Shopify 交付包 · MIT — 面试主开源项目',
+    desc: 'SEO+GEO 电商 Demo · Shopify 交付包 · MIT',
     url: 'https://github.com/GosuQuan/seo-geo-commerce',
     tags: ['Next.js', 'GEO', 'Shopify'],
   },
@@ -59,8 +59,8 @@ export const openSource = [
 
 export const articles = [
   {
-    title: 'Answer-first 如何提升 GEO 可引用性',
-    summary: '面试常问：为什么不是堆关键词？用首屏短答、FAQ 与同源结构化数据讲清楚。',
+    title: 'Answer-first 与 GEO 可引用性',
+    summary: '为什么不是堆关键词：首屏短答、FAQ 与同源结构化数据。',
     href: 'https://github.com/GosuQuan/seo-geo-commerce#-%E4%BA%AE%E7%82%B9%E7%BD%91%E6%A0%BC',
     status: '开源文档',
   },
@@ -82,6 +82,6 @@ export const nav = [
   { id: 'about', label: '关于' },
   { id: 'work', label: '项目' },
   { id: 'open', label: '开源' },
-  { id: 'writing', label: '可讲点' },
+  { id: 'writing', label: '笔记' },
   { id: 'contact', label: '联系' },
 ]

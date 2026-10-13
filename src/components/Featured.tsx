@@ -6,7 +6,7 @@ export function Featured() {
   return (
     <section id="work" className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-20">
       <Reveal tone="blur">
-        <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Featured open source</p>
+        <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Open source</p>
         <h2 className="mt-2 text-3xl font-semibold text-white sm:text-4xl">{p.name}</h2>
         <p className="mt-2 text-slate-400">{p.subtitle}</p>
       </Reveal>

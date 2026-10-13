@@ -32,11 +32,11 @@ export function Featured() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={p.repo} target="_blank" rel="noreferrer" className="rounded-full bg-[#f4f4f5] px-4 py-2 text-sm font-semibold hover:bg-white" style={{ color: "#09090b" }}>
-              GitHub 仓库
+            <a href={p.demo} target="_blank" rel="noreferrer" className="rounded-full bg-[#f4f4f5] px-4 py-2 text-sm font-semibold hover:bg-white" style={{ color: "#09090b" }}>
+              打开演示
             </a>
-            <a href={p.demo} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm text-slate-300">
-              演示站（次要）
+            <a href={p.repo} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm text-slate-300">
+              GitHub 仓库
             </a>
           </div>
         </article>

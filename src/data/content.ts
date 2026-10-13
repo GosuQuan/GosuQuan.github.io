@@ -12,14 +12,14 @@ export const profile = {
 export const featuredProject = {
   id: 'seo-geo-commerce',
   name: 'TrailForge 峰途',
-  subtitle: 'SEO + GEO 电商参考实现 · 面试主案例',
+  subtitle: '开源电商演示 · SEO/GEO',
   description:
-    '可 fork 的店面 + 工具库 + Shopify 交付包。面试里我重点讲三件事：Answer-first/GEO 如何提升可引用性、JSON-LD 与单一事实源、动效库懒加载如何保住首页性能。',
+    '可 fork 的店面和 Shopify 交付包。面试我一般就讲三件事：答案怎么写在首屏、商品事实怎么只维护一份、重动效怎么不拖首页。',
   demo: 'http://117.72.122.109:3088/',
   repo: 'https://github.com/GosuQuan/seo-geo-commerce',
   highlights: [
-    { label: 'GitHub 仓库（主入口）', href: 'https://github.com/GosuQuan/seo-geo-commerce' },
-    { label: '电商实战 3D（演示次要）', href: 'http://117.72.122.109:3088/' },
+    { label: '在线演示（主入口）', href: 'http://117.72.122.109:3088/' },
+    { label: 'GitHub 仓库', href: 'https://github.com/GosuQuan/seo-geo-commerce' },
     { label: 'Answer-first / GEO 可引用性', href: 'http://117.72.122.109:3088/products' },
     { label: 'JSON-LD · 单一事实源', href: 'http://117.72.122.109:3088/audit' },
     { label: '动效懒加载 · 保首屏', href: 'http://117.72.122.109:3088/effects' },
@@ -29,23 +29,23 @@ export const featuredProject = {
   talkingPoints: [
     {
       title: 'Answer-first / GEO',
-      body: '首屏短答 + FAQ + 规格同源，提升搜索与 AI 答案的可引用性，而不只是堆关键词。',
+      body: '首屏先给短结论，FAQ 和规格跟同一套数据，方便被搜到、也被 AI 引用，不是堆关键词。',
     },
     {
       title: 'JSON-LD · 单一事实源',
-      body: '商品事实集中在数据层，页面文案与结构化数据同源，避免两套稿漂移。',
+      body: '价格规格只在数据层改一次，页面文案和结构化数据一起走，少两套稿对不上。',
     },
     {
       title: '动效懒加载',
-      body: 'R3F / Motion 按需加载，实验室与 Lottie 不影响首页关键路径性能。',
+      body: 'R3F、Motion、Lottie 按路由再加载，实验室页再炫也不进首页主包。',
     },
     {
       title: '电商实战 3D',
-      body: '商品级可拖 R3F 在 TrailForge 首页英雄区；简历站用抽象拓扑，两边不撞车。',
+      body: '商品级可拖 3D 在 TrailForge 首页；简历站用抽象晶体，两边分工清楚。',
     },
   ],
   stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'R3F', 'Framer Motion', 'Shopify Liquid'],
-  seoLine: '事实单一来源 + 答案前置，方便搜索和 AI 引用。',
+  seoLine: '一份事实 + 答案前置，搜索和 AI 都更好用。',
 }
 
 export const openSource = [

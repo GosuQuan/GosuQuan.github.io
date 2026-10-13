@@ -1,7 +1,36 @@
 import { about, profile } from '../data/content'
 import { Reveal } from './Reveal'
 
+function CompanyTag({
+  name,
+  logo,
+  href,
+}: {
+  name: string
+  logo: string
+  href?: string
+}) {
+  const inner = (
+    <>
+      <img src={logo} alt="" width={16} height={16} className="h-4 w-4 rounded-[4px] object-contain" />
+      <span>{name}</span>
+    </>
+  )
+  const className =
+    'inline-flex translate-y-[-1px] items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.07] px-2.5 py-0.5 text-[13px] font-medium text-white/95 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] align-middle'
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={`${className} transition hover:border-white/25 hover:bg-white/[0.1]`}>
+        {inner}
+      </a>
+    )
+  }
+  return <span className={className}>{inner}</span>
+}
+
 export function About() {
+  const [jd, ke] = about.companies
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-10 sm:px-5 sm:py-16">
       <Reveal tone="blur">
@@ -11,7 +40,13 @@ export function About() {
       </Reveal>
 
       <Reveal tone="fade-up" delay={0.06} className="mt-6">
-        <p className="max-w-3xl text-sm leading-7 text-slate-300 sm:text-[15px]">{about.intro}</p>
+        <p className="max-w-3xl text-sm leading-8 text-slate-300 sm:text-[15px] sm:leading-8">
+          {about.introLead}{' '}
+          <CompanyTag {...jd} />{' '}
+          {about.introMid}{' '}
+          <CompanyTag {...ke} />{' '}
+          {about.introTail}
+        </p>
       </Reveal>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">

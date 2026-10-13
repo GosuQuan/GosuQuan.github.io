@@ -78,8 +78,13 @@ export const featuredProject = {
 
 export const about = {
   role: 'AI Agent 应用开发 · 前端',
-  intro:
-    '现在在京东 Joybuy 做国际电商主站与 AI 工程：购物车核心链路、Agent 巡检和前端性能。之前在贝壳做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成 TrailForge。雅思 8 分。',
+  introLead: '现在在',
+  introMid: '做国际电商主站与 AI 工程：购物车核心链路、Agent 巡检和前端性能。之前在',
+  introTail: '做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成 TrailForge。雅思 8 分。',
+  companies: [
+    { name: '京东 Joybuy', logo: '/logos/jd.png', href: 'https://www.joybuy.com/' },
+    { name: '贝壳', logo: '/logos/ke.png', href: 'https://www.ke.com/' },
+  ],
   highlights: [
     {
       title: 'Joybuy · 购物车与 AI 工程',

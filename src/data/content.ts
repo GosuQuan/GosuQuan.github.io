@@ -17,7 +17,8 @@ export const featuredProject = {
   demo: 'http://117.72.122.109:3088/',
   repo: 'https://github.com/GosuQuan/seo-geo-commerce',
   highlights: [
-    { label: '电商实战 3D（首页英雄区）', href: 'http://117.72.122.109:3088/' },
+    { label: 'GitHub 仓库（主入口）', href: 'https://github.com/GosuQuan/seo-geo-commerce' },
+    { label: '电商实战 3D（演示次要）', href: 'http://117.72.122.109:3088/' },
     { label: 'Answer-first / GEO 可引用性', href: 'http://117.72.122.109:3088/products' },
     { label: 'JSON-LD · 单一事实源', href: 'http://117.72.122.109:3088/audit' },
     { label: '动效懒加载 · 保首屏', href: 'http://117.72.122.109:3088/effects' },

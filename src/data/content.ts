@@ -128,8 +128,8 @@ export const articles = [
 ]
 
 export const nav = [
-  { id: 'about', label: '关于' },
   { id: 'work', label: '项目' },
   { id: 'open', label: '开源' },
+  { id: 'about', label: '关于' },
   { id: 'contact', label: '联系' },
 ]

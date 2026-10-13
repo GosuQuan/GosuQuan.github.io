@@ -24,6 +24,12 @@ export function Hero() {
         查看项目
       </a>
       <a
+        href="#about"
+        className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 bg-transparent px-5 py-2.5 text-sm text-slate-200 hover:border-white/35"
+      >
+        关于我
+      </a>
+      <a
         href={profile.github}
         target="_blank"
         rel="noreferrer"

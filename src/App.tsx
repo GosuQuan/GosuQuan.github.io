@@ -15,9 +15,9 @@ export default function App() {
       <div className="relative z-10 isolate"><Nav />
       <main>
         <Hero />
-        <About />
         <Featured />
         <OpenSource />
+        <About />
       </main>
       <Footer />
       </div>

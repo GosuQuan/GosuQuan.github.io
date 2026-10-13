@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-16">
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-10 sm:px-5 sm:py-16">
       <Reveal tone="blur">
         <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">About</p>
         <h2 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">关于我</h2>

@@ -79,8 +79,8 @@ export const featuredProject = {
 export const about = {
   role: 'AI Agent 应用开发 · 前端',
   introLead: '现在在',
-  introMid: '做国际电商主站与 AI 工程：购物车核心链路、Agent 巡检和前端性能。之前在',
-  introAfterKe: '做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成',
+  introMid: '做国际电商与 AI 工程，偏前端性能和 Agent 落地。之前在',
+  introAfterKe: '做 B 端业务与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成',
   introEnd: '。雅思 8 分。',
   companies: [
     { id: 'jd', name: '京东 Joybuy', logo: '/logos/jd.png', href: 'https://www.joybuy.com/' },
@@ -89,19 +89,19 @@ export const about = {
   ],
   highlights: [
     {
-      title: 'Joybuy · 购物车与 AI 工程',
+      title: '电商主站 · 性能与 AI 工程',
       companyId: 'jd',
-      body: '百万级 DAU 购物车 PC/H5 架构；AI Review 用规则引擎兜底越权与结算路径，模型只补语义。业务侧 TTFB 缩短 34%，LCP 从 1.7s 到 1.3s。',
+      body: '国际电商前端与核心交易相关体验；把规则与模型结合进研发流程，顺手做性能与可观测。',
     },
     {
-      title: 'DongGUI · 巡检 Agent',
+      title: 'Agent · 长任务与巡检',
       companyId: 'jd',
-      body: 'Plan-Execute-Evaluate-Repair + RAG：页面知识缓存命中 70%+，LLM 调用约降 80%，Token 约降 45%；多模型路由把巡检耗时再压约 30%。',
+      body: '围绕业务页面做 Agent 编排、知识复用和多模型路由，让长任务更稳、成本更可控。',
     },
     {
-      title: '贝壳 · 从业务到内部 AI',
+      title: 'B 端业务 · 内部 AI 工作流',
       companyId: 'ke',
-      body: '楼盘字典支撑 40 万经纪人；搭了 2+ 条 PRD→Coding Agent 工作流，集团内 200+ 人在用。入职半年 P4→P5。',
+      body: '做过数据密集型 B 端产品，也推过团队内部从需求到编码的 Agent 工作流。',
     },
   ],
   focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO'],

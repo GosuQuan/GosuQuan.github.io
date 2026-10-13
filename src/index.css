@@ -12,12 +12,57 @@ body {
   font-family: var(--font-sans);
   color: #e7eaf2;
   background: #07080d;
+  -webkit-font-smoothing: antialiased;
 }
 ::selection { background: rgba(148, 163, 184, 0.28); }
 a { color: inherit; text-decoration: none; }
 
+.mobile-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.55;
+  will-change: transform;
+}
+.mobile-orb-a {
+  width: 55vw;
+  height: 55vw;
+  left: -10%;
+  top: 8%;
+  background: radial-gradient(circle, rgba(165, 180, 252, 0.45), transparent 70%);
+  animation: orb-drift-a 12s ease-in-out infinite;
+}
+.mobile-orb-b {
+  width: 48vw;
+  height: 48vw;
+  right: -12%;
+  top: 28%;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.35), transparent 70%);
+  animation: orb-drift-b 15s ease-in-out infinite;
+}
+.mobile-orb-c {
+  width: 60vw;
+  height: 60vw;
+  left: 20%;
+  bottom: 5%;
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.28), transparent 70%);
+  animation: orb-drift-c 18s ease-in-out infinite;
+}
+
+@keyframes orb-drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(8vw, 6vh, 0) scale(1.08); }
+}
+@keyframes orb-drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-6vw, 10vh, 0) scale(1.05); }
+}
+@keyframes orb-drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(4vw, -8vh, 0) scale(1.1); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
+  .mobile-orb { animation: none !important; }
 }

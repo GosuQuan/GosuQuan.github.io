@@ -4,7 +4,7 @@ import { Reveal } from './Reveal'
 export function Featured() {
   const p = featuredProject
   return (
-    <section id="work" className="mx-auto max-w-6xl px-5 py-20">
+    <section id="work" className="mx-auto max-w-6xl px-4 py-14 sm:px-5 sm:py-20">
       <Reveal tone="blur">
         <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Featured open source</p>
         <h2 className="mt-2 text-3xl font-semibold text-white sm:text-4xl">{p.name}</h2>

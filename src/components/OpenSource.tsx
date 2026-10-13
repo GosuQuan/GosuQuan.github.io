@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function OpenSource() {
   return (
-    <section id="open" className="mx-auto max-w-6xl px-4 py-12 sm:px-5 sm:py-16">
+    <section id="open" className="mx-auto max-w-6xl px-4 py-9 sm:px-5 sm:py-16">
       <Reveal tone="fade-left">
         <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Open source</p>
         <h2 className="mt-2 text-2xl font-semibold text-white">开源项目</h2>

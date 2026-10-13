@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function Footer() {
   return (
-    <footer id="contact" className="mx-auto max-w-6xl px-4 py-12 sm:px-5 sm:py-16">
+    <footer id="contact" className="mx-auto max-w-6xl px-4 py-9 sm:px-5 sm:py-16">
       <Reveal tone="scale">
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] px-6 py-10 backdrop-blur-xl sm:px-10">
           <h2 className="text-2xl font-semibold text-white">联系</h2>

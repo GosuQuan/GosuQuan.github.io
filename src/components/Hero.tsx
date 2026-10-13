@@ -2,11 +2,11 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion'
 import { profile } from '../data/content'
 
 const fade: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.07 * i, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: 0.05 * i, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
   }),
 }
 
@@ -14,7 +14,7 @@ export function Hero() {
   const reduce = useReducedMotion()
 
   const cta = (
-    <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap">
+    <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-3">
       <a
         href="#work"
         className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#f4f4f5] px-5 py-2.5 text-sm font-semibold text-[#09090b] hover:bg-white"
@@ -33,44 +33,52 @@ export function Hero() {
     </div>
   )
 
+  const body = (
+    <div className="max-w-2xl">
+      <p className="text-[11px] tracking-[0.2em] text-slate-400 uppercase sm:text-xs sm:tracking-[0.24em]">
+        Portfolio for interviews
+      </p>
+      <h1 className="mt-2.5 text-[2.15rem] font-semibold leading-[1.12] tracking-tight text-white sm:mt-5 sm:text-6xl">
+        {profile.name}
+      </h1>
+      <p className="mt-2 text-[15px] leading-snug text-slate-300 sm:mt-3 sm:text-xl">{profile.tagline}</p>
+      <p className="mt-3 text-[14px] leading-6 text-slate-400 sm:mt-6 sm:text-base sm:leading-7">{profile.blurb}</p>
+      {cta}
+      <div className="mt-8 flex items-center gap-3 text-[11px] text-slate-500 sm:mt-14 sm:text-xs">
+        <span className="h-6 w-px bg-gradient-to-b from-slate-400 to-transparent sm:h-8" />
+        {reduce ? '内容已按系统设置静态展示' : '向下滚动，分段动画展开'}
+      </div>
+    </div>
+  )
+
   if (reduce) {
     return (
-      <section id="about" className="relative mx-auto max-w-6xl px-5 pb-16 pt-14 sm:min-h-[78vh] sm:pb-20 sm:pt-28">
-        <div className="max-w-2xl">
-          <p className="text-[11px] tracking-[0.24em] text-slate-400 uppercase sm:text-xs">Portfolio for interviews</p>
-          <h1 className="mt-4 text-[2.35rem] font-semibold leading-[1.1] tracking-tight text-white sm:mt-5 sm:text-6xl">{profile.name}</h1>
-          <p className="mt-3 text-base text-slate-300 sm:text-xl">{profile.tagline}</p>
-          <p className="mt-5 text-[15px] leading-7 text-slate-400 sm:mt-6 sm:text-base">{profile.blurb}</p>
-          {cta}
-          <div className="mt-12 flex items-center gap-3 text-xs text-slate-500 sm:mt-16">
-            <span className="h-8 w-px bg-gradient-to-b from-slate-400 to-transparent" />
-            内容已按系统设置静态展示
-          </div>
-        </div>
+      <section id="about" className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:min-h-[78vh] sm:px-5 sm:pb-20 sm:pt-28">
+        {body}
       </section>
     )
   }
 
   return (
-    <section id="about" className="relative mx-auto max-w-6xl px-5 pb-16 pt-14 sm:min-h-[78vh] sm:pb-20 sm:pt-28">
+    <section id="about" className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:min-h-[78vh] sm:px-5 sm:pb-20 sm:pt-28">
       <div className="max-w-2xl">
-        <motion.p custom={0} variants={fade} initial="hidden" animate="show" className="text-[11px] tracking-[0.24em] text-slate-400 uppercase sm:text-xs">
+        <motion.p custom={0} variants={fade} initial="hidden" animate="show" className="text-[11px] tracking-[0.2em] text-slate-400 uppercase sm:text-xs sm:tracking-[0.24em]">
           Portfolio for interviews
         </motion.p>
-        <motion.h1 custom={1} variants={fade} initial="hidden" animate="show" className="mt-4 text-[2.35rem] font-semibold leading-[1.1] tracking-tight text-white sm:mt-5 sm:text-6xl">
+        <motion.h1 custom={1} variants={fade} initial="hidden" animate="show" className="mt-2.5 text-[2.15rem] font-semibold leading-[1.12] tracking-tight text-white sm:mt-5 sm:text-6xl">
           {profile.name}
         </motion.h1>
-        <motion.p custom={2} variants={fade} initial="hidden" animate="show" className="mt-3 text-base text-slate-300 sm:text-xl">
+        <motion.p custom={2} variants={fade} initial="hidden" animate="show" className="mt-2 text-[15px] leading-snug text-slate-300 sm:mt-3 sm:text-xl">
           {profile.tagline}
         </motion.p>
-        <motion.p custom={3} variants={fade} initial="hidden" animate="show" className="mt-5 text-[15px] leading-7 text-slate-400 sm:mt-6 sm:text-base">
+        <motion.p custom={3} variants={fade} initial="hidden" animate="show" className="mt-3 text-[14px] leading-6 text-slate-400 sm:mt-6 sm:text-base sm:leading-7">
           {profile.blurb}
         </motion.p>
         <motion.div custom={4} variants={fade} initial="hidden" animate="show">
           {cta}
         </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }} className="mt-12 flex items-center gap-3 text-xs text-slate-500 sm:mt-16">
-          <span className="h-8 w-px bg-gradient-to-b from-slate-400 to-transparent" />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.6 }} className="mt-8 flex items-center gap-3 text-[11px] text-slate-500 sm:mt-14 sm:text-xs">
+          <span className="h-6 w-px bg-gradient-to-b from-slate-400 to-transparent sm:h-8" />
           向下滚动，分段动画展开
         </motion.div>
       </div>

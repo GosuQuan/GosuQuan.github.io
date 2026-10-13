@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function Writing() {
   return (
-    <section id="writing" className="mx-auto max-w-6xl px-4 py-12 sm:px-5 sm:py-16">
+    <section id="writing" className="mx-auto max-w-6xl px-4 py-9 sm:px-5 sm:py-16">
       <Reveal tone="fade-up">
         <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Talk tracks</p>
         <h2 className="mt-2 text-2xl font-semibold text-white">面试可讲点</h2>

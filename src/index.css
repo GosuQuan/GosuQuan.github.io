@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: "Space Grotesk", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
 }
 
 * { box-sizing: border-box; }

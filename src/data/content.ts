@@ -1,10 +1,11 @@
 export const profile = {
   name: 'GosuQuan',
+  displayName: 'Kingsley Li',
   handle: 'thisiskingsley',
   tagline: '全栈 · SEO/GEO · 开源与工程交付',
   blurb:
-    '这里主要放我做过的开源，顺着项目能讲清取舍和落地，不靠堆技术名词。',
-  blurbShort: '开源项目为主，讲清取舍与落地。',
+    '开源项目与工程实践的个人站点。',
+  blurbShort: '开源与工程实践。',
   github: 'https://github.com/GosuQuan',
   email: '',
 }

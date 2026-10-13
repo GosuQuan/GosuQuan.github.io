@@ -1,19 +1,29 @@
 import { articles } from '../data/content'
+import { Reveal } from './Reveal'
 
 export function Writing() {
   return (
-    <section id="writing" className="mx-auto max-w-6xl px-5 py-14">
-      <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Talk tracks</p>
-      <h2 className="mt-2 text-2xl font-semibold text-white">面试可讲点</h2>
-      <div className="mt-6 divide-y divide-white/10 rounded-2xl border border-white/10">
-        {articles.map((a) => (
-          <a key={a.title} href={a.href} target="_blank" rel="noreferrer" className="flex flex-col gap-1 px-5 py-4 hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-sm text-white">{a.title}</p>
-              <p className="mt-1 text-xs text-slate-500">{a.summary}</p>
-            </div>
-            <span className="text-xs text-slate-500">{a.status}</span>
-          </a>
+    <section id="writing" className="mx-auto max-w-6xl px-5 py-16">
+      <Reveal tone="fade-up">
+        <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Talk tracks</p>
+        <h2 className="mt-2 text-2xl font-semibold text-white">面试可讲点</h2>
+      </Reveal>
+      <div className="mt-8 space-y-3">
+        {articles.map((a, i) => (
+          <Reveal key={a.title} tone="blur" delay={0.05 * i}>
+            <a
+              href={a.href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-black/20 px-5 py-4 backdrop-blur-md transition hover:-translate-y-0.5 hover:border-white/20 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <p className="text-sm text-white">{a.title}</p>
+                <p className="mt-1 text-xs text-slate-500">{a.summary}</p>
+              </div>
+              <span className="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-400">{a.status}</span>
+            </a>
+          </Reveal>
         ))}
       </div>
     </section>

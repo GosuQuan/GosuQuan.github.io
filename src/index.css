@@ -13,5 +13,5 @@ body {
   color: #e7eaf2;
   background: #07080d;
 }
-::selection { background: rgba(125, 211, 252, 0.25); }
+::selection { background: rgba(148, 163, 184, 0.28); }
 a { color: inherit; text-decoration: none; }

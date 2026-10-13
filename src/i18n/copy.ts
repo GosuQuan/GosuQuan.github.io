@@ -268,7 +268,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       name: 'TrailForge',
       subtitle: 'Open-source commerce demo · SEO/GEO',
       description:
-        'A forkable storefront and Shopify delivery pack. Three focus areas: answers on the first screen, one source of product truth, and heavy motion that stays off the homepage critical path.',
+        'A forkable storefront and Shopify delivery pack. Three focus areas: Answer-first above the fold, a single source of truth for product facts, and heavy motion kept off the homepage critical path.',
       demo: 'http://117.72.122.109:3088/',
       repo: 'https://github.com/GosuQuan/seo-geo-commerce',
       openPage: 'Open this page →',
@@ -277,20 +277,20 @@ export const siteCopy: Record<Locale, SiteCopy> = {
         { label: 'GitHub', logo: '/logos/tech/github.svg', href: 'https://github.com/GosuQuan/seo-geo-commerce' },
         { label: 'Shopify Liquid', logo: '/logos/tech/shopify.svg', href: 'https://github.com/GosuQuan/seo-geo-commerce/tree/main/docs/shopify' },
         { label: 'Answer-first / GEO', logo: '/logos/tech/seo.svg', href: 'http://117.72.122.109:3088/products' },
-        { label: 'JSON-LD source of truth', logo: '/logos/tech/seo.svg', href: 'http://117.72.122.109:3088/audit' },
+        { label: 'JSON-LD · single source of truth', logo: '/logos/tech/seo.svg', href: 'http://117.72.122.109:3088/audit' },
         { label: 'Effects lab', logo: '/logos/tech/react.svg', href: 'http://117.72.122.109:3088/effects' },
       ],
       demos: [
         {
           src: '/demos/home.jpg',
           title: 'Home · Answer-first + product 3D',
-          body: 'Lead with a citable short answer; a draggable R3F product scene sits on the side. Capability chips surface JSON-LD, Facts API, llms.txt, and more.',
+          body: 'Answer-first: a citable short answer on the first screen; a draggable R3F product scene on the side. Chips surface JSON-LD, Facts API, llms.txt, and more.',
           href: 'http://117.72.122.109:3088/',
         },
         {
           src: '/demos/products.jpg',
           title: 'Catalog · single source of truth',
-          body: 'List page, PDP copy, and JSON-LD share one product dataset—change price or specs once, avoid two drafts drifting apart.',
+          body: 'Single source of truth: list, PDP copy, and JSON-LD share one product dataset—change price or specs once, no drifting drafts.',
           href: 'http://117.72.122.109:3088/products',
         },
         {

@@ -11,8 +11,8 @@ export function Featured() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="text-sm uppercase tracking-[0.24em] text-emerald-300/80">Featured Case</p>
-        <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">电商项目集成 · {p.name}</h2>
+        <p className="text-sm uppercase tracking-[0.24em] text-emerald-300/80">Interview Case</p>
+        <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">开源主案例 · {p.name}</h2>
         <p className="mt-2 text-white/50">{p.subtitle}</p>
       </motion.div>
 
@@ -23,7 +23,7 @@ export function Featured() {
         transition={{ duration: 0.7, delay: 0.1 }}
         className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
       >
-        <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative min-h-[260px] overflow-hidden border-b border-white/10 bg-[#0a0f1c] p-8 lg:border-b-0 lg:border-r">
             <motion.div
               className="absolute inset-0 opacity-60"
@@ -36,13 +36,18 @@ export function Featured() {
             />
             <div className="relative z-10 flex h-full flex-col justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-cyan-200/70">Live Demo Preview</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-cyan-200/70">Open Source · Demo</p>
                 <h3 className="mt-4 text-2xl font-semibold">{p.name}</h3>
                 <p className="mt-3 max-w-md text-sm leading-relaxed text-white/60">{p.description}</p>
               </div>
-              <p className="mt-8 rounded-2xl border border-cyan-300/20 bg-cyan-400/5 px-4 py-3 text-sm text-cyan-100/90">
-                {p.seoLine}
-              </p>
+              <div className="mt-8 space-y-3">
+                {p.talkingPoints.map((tp) => (
+                  <div key={tp.title} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
+                    <p className="text-sm font-medium text-cyan-100">{tp.title}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-white/55">{tp.body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -70,6 +75,9 @@ export function Featured() {
                 </a>
               ))}
             </div>
+            <p className="rounded-2xl border border-cyan-300/20 bg-cyan-400/5 px-4 py-3 text-sm text-cyan-100/90">
+              {p.seoLine}
+            </p>
             <div className="mt-auto flex flex-wrap gap-3 pt-2">
               <a
                 href={p.demo}

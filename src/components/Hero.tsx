@@ -12,7 +12,7 @@ const fade: Variants = {
 
 export function Hero() {
   return (
-    <section id="top" className="relative mx-auto max-w-6xl overflow-hidden px-5 pb-20 pt-16 sm:pt-24">
+    <section id="about" className="relative mx-auto max-w-6xl overflow-hidden px-5 pb-20 pt-16 sm:pt-24">
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl"
@@ -33,7 +33,7 @@ export function Hero() {
         animate="show"
         className="mb-4 text-sm uppercase tracking-[0.28em] text-cyan-200/70"
       >
-        Portfolio · Open Source · Motion
+        Resume · Open Source · Interview Ready
       </motion.p>
       <motion.h1
         custom={1}
@@ -42,9 +42,9 @@ export function Hero() {
         animate="show"
         className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-6xl"
       >
-        炫酷动效的作品集，
+        介绍我做过的开源，
         <span className="bg-gradient-to-r from-cyan-300 via-violet-300 to-emerald-300 bg-clip-text text-transparent">
-          技术文章与开源分享
+          方便面试讲清楚
         </span>
       </motion.h1>
       <motion.p
@@ -67,13 +67,13 @@ export function Hero() {
           href="#work"
           className="rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 px-5 py-2.5 text-sm font-semibold text-[#05060a] shadow-[0_0_40px_rgba(110,231,255,0.25)] transition hover:brightness-110"
         >
-          看重点案例
+          看主开源案例
         </a>
         <a
           href="#writing"
           className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-white/80 transition hover:border-cyan-300/40 hover:text-cyan-100"
         >
-          文章与实验室
+          面试可讲点
         </a>
       </motion.div>
     </section>

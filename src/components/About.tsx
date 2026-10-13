@@ -30,7 +30,11 @@ function CompanyTag({
 }
 
 export function About() {
-  const [jd, ke] = about.companies
+  const byId = Object.fromEntries(about.companies.map((c) => [c.id, c]))
+  const jd = byId.jd
+  const ke = byId.ke
+  const tf = byId.tf
+
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-10 sm:px-5 sm:py-16">
       <Reveal tone="blur">
@@ -45,19 +49,29 @@ export function About() {
           <CompanyTag {...jd} />{' '}
           {about.introMid}{' '}
           <CompanyTag {...ke} />{' '}
-          {about.introTail}
+          {about.introAfterKe}{' '}
+          <CompanyTag {...tf} />
+          {about.introEnd}
         </p>
       </Reveal>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
-        {about.highlights.map((h, i) => (
-          <Reveal key={h.title} tone={i === 1 ? 'fade-up' : i === 0 ? 'fade-left' : 'fade-right'} delay={0.05 * i}>
-            <div className="h-full rounded-2xl border border-white/10 bg-black/25 p-5 backdrop-blur">
-              <h3 className="text-sm font-medium text-white">{h.title}</h3>
-              <p className="mt-3 text-xs leading-6 text-slate-400">{h.body}</p>
-            </div>
-          </Reveal>
-        ))}
+        {about.highlights.map((h, i) => {
+          const co = byId[h.companyId]
+          return (
+            <Reveal key={h.title} tone={i === 1 ? 'fade-up' : i === 0 ? 'fade-left' : 'fade-right'} delay={0.05 * i}>
+              <div className="h-full rounded-2xl border border-white/10 bg-black/25 p-5 backdrop-blur">
+                {co ? (
+                  <div className="mb-3">
+                    <CompanyTag {...co} />
+                  </div>
+                ) : null}
+                <h3 className="text-sm font-medium text-white">{h.title}</h3>
+                <p className="mt-3 text-xs leading-6 text-slate-400">{h.body}</p>
+              </div>
+            </Reveal>
+          )
+        })}
       </div>
 
       <Reveal tone="scale" delay={0.1} className="mt-6">

@@ -80,22 +80,27 @@ export const about = {
   role: 'AI Agent 应用开发 · 前端',
   introLead: '现在在',
   introMid: '做国际电商主站与 AI 工程：购物车核心链路、Agent 巡检和前端性能。之前在',
-  introTail: '做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成 TrailForge。雅思 8 分。',
+  introAfterKe: '做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成',
+  introEnd: '。雅思 8 分。',
   companies: [
-    { name: '京东 Joybuy', logo: '/logos/jd.png', href: 'https://www.joybuy.com/' },
-    { name: '贝壳', logo: '/logos/ke.png', href: 'https://www.ke.com/' },
+    { id: 'jd', name: '京东 Joybuy', logo: '/logos/jd.png', href: 'https://www.joybuy.com/' },
+    { id: 'ke', name: '贝壳', logo: '/logos/ke.png', href: 'https://www.ke.com/' },
+    { id: 'tf', name: 'TrailForge', logo: '/logos/trailforge.png', href: 'http://117.72.122.109:3088/' },
   ],
   highlights: [
     {
       title: 'Joybuy · 购物车与 AI 工程',
+      companyId: 'jd',
       body: '百万级 DAU 购物车 PC/H5 架构；AI Review 用规则引擎兜底越权与结算路径，模型只补语义。业务侧 TTFB 缩短 34%，LCP 从 1.7s 到 1.3s。',
     },
     {
       title: 'DongGUI · 巡检 Agent',
+      companyId: 'jd',
       body: 'Plan-Execute-Evaluate-Repair + RAG：页面知识缓存命中 70%+，LLM 调用约降 80%，Token 约降 45%；多模型路由把巡检耗时再压约 30%。',
     },
     {
       title: '贝壳 · 从业务到内部 AI',
+      companyId: 'ke',
       body: '楼盘字典支撑 40 万经纪人；搭了 2+ 条 PRD→Coding Agent 工作流，集团内 200+ 人在用。入职半年 P4→P5。',
     },
   ],

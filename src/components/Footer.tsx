@@ -8,7 +8,7 @@ export function Footer() {
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] px-6 py-10 backdrop-blur-xl sm:px-10">
           <h2 className="text-2xl font-semibold text-white">联系</h2>
           <p className="mt-2 max-w-lg text-sm text-slate-400">开源协作 / 面试可直接看仓库与演示。</p>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-950">
+          <a href={profile.github} target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-neutral-950">
             github.com/GosuQuan
           </a>
           <p className="mt-8 text-xs text-slate-600">© {new Date().getFullYear()} {profile.name}</p>

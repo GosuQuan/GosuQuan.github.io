@@ -30,7 +30,7 @@ export function Hero() {
 
   return (
     <section id="about" className="relative mx-auto max-w-6xl overflow-hidden px-5 pb-20 pt-16 sm:pt-24">
-      <div className="pointer-events-none absolute inset-y-0 right-[-8%] hidden w-[52%] lg:block">
+      <div className="pointer-events-none absolute inset-y-0 right-[-8%] w-full opacity-40 lg:opacity-100 lg:w-[52%] block max-h-[280px] lg:max-h-none">
         <div className="pointer-events-auto h-full min-h-[420px]">
           {mount3d ? (
             <Suspense fallback={<div className="h-full animate-pulse rounded-full bg-cyan-400/5" />}>

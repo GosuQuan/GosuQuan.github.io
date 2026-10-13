@@ -12,7 +12,7 @@ export default function App() {
     <div className="relative min-h-screen">
       <Background3D />
       <SoftLight />
-      <div className="relative z-10"><Nav />
+      <div className="relative z-10 isolate"><Nav />
       <main>
         <Hero />
         <Featured />

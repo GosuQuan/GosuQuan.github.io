@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react'
 
+/** Desktop-only soft spotlight. Never on touch/coarse pointers. Stays under content (no blend on UI). */
 export function SoftLight() {
   const [enabled, setEnabled] = useState(false)
-  const [pos, setPos] = useState({ x: 0.7, y: 0.25 })
+  const [pos, setPos] = useState({ x: 0.72, y: 0.28 })
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
-    const fine = window.matchMedia('(pointer: fine)')
+    const desktop = window.matchMedia('(min-width: 1024px) and (pointer: fine)')
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => setEnabled(fine.matches && !reduce.matches)
+    const update = () => setEnabled(desktop.matches && !reduce.matches)
     update()
-    fine.addEventListener('change', update)
+    desktop.addEventListener('change', update)
     reduce.addEventListener('change', update)
     return () => {
-      fine.removeEventListener('change', update)
+      desktop.removeEventListener('change', update)
       reduce.removeEventListener('change', update)
     }
   }, [])
@@ -21,18 +22,16 @@ export function SoftLight() {
   useEffect(() => {
     if (!enabled) return
     let raf = 0
-    let target = { x: pos.x, y: pos.y }
-    const onMove = (e: MouseEvent) => {
-      target = {
+    const onMove = (e: PointerEvent) => {
+      if (e.pointerType && e.pointerType !== 'mouse') return
+      const next = {
         x: e.clientX / window.innerWidth,
         y: e.clientY / window.innerHeight,
       }
       cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => setPos({ ...target }))
+      raf = requestAnimationFrame(() => setPos(next))
     }
-    const onScroll = () => {
-      setScrollY(window.scrollY)
-    }
+    const onScroll = () => setScrollY(window.scrollY)
     window.addEventListener('pointermove', onMove, { passive: true })
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
@@ -45,27 +44,19 @@ export function SoftLight() {
 
   if (!enabled) return null
 
-  const drift = Math.min(scrollY / 1200, 1)
+  const drift = Math.min(scrollY / 1400, 1)
   const x = pos.x * 100
   const y = pos.y * 100
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div
-        className="absolute h-[55vmax] w-[55vmax] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-70 transition-[left,top] duration-300 ease-out"
+        className="absolute h-[50vmax] w-[50vmax] -translate-x-1/2 -translate-y-1/2 rounded-full transition-[left,top] duration-300 ease-out will-change-[left,top]"
         style={{
           left: `${x}%`,
           top: `${y}%`,
-          background: `radial-gradient(circle, rgba(226,232,240,${0.14 - drift * 0.04}) 0%, rgba(165,180,252,${0.08}) 28%, transparent 68%)`,
-          filter: 'blur(8px)',
-        }}
-      />
-      <div
-        className="absolute h-[28vmax] w-[28vmax] -translate-x-1/2 -translate-y-1/2 rounded-full mix-blend-screen transition-[left,top] duration-500 ease-out"
-        style={{
-          left: `${x}%`,
-          top: `${y}%`,
-          background: `radial-gradient(circle, rgba(255,255,255,${0.12}) 0%, transparent 70%)`,
+          background: `radial-gradient(circle, rgba(226,232,240,${0.09 - drift * 0.03}) 0%, rgba(165,180,252,0.05) 32%, transparent 70%)`,
+          filter: 'blur(10px)',
         }}
       />
     </div>

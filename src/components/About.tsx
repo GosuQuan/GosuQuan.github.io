@@ -55,24 +55,6 @@ export function About() {
         </p>
       </Reveal>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
-        {about.highlights.map((h, i) => {
-          const co = byId[h.companyId]
-          return (
-            <Reveal key={h.title} tone={i === 1 ? 'fade-up' : i === 0 ? 'fade-left' : 'fade-right'} delay={0.05 * i}>
-              <div className="h-full rounded-2xl border border-white/10 bg-black/25 p-5 backdrop-blur">
-                {co ? (
-                  <div className="mb-3">
-                    <CompanyTag {...co} />
-                  </div>
-                ) : null}
-                <h3 className="text-sm font-medium text-white">{h.title}</h3>
-                <p className="mt-3 text-xs leading-6 text-slate-400">{h.body}</p>
-              </div>
-            </Reveal>
-          )
-        })}
-      </div>
 
       <Reveal tone="scale" delay={0.1} className="mt-6">
         <div className="flex flex-wrap gap-2">

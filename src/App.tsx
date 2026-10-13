@@ -5,7 +5,6 @@ import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Nav } from './components/Nav'
 import { OpenSource } from './components/OpenSource'
-import { Writing } from './components/Writing'
 
 export default function App() {
   return (
@@ -17,7 +16,6 @@ export default function App() {
         <Hero />
         <Featured />
         <OpenSource />
-        <Writing />
       </main>
       <Footer />
       </div>

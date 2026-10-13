@@ -79,7 +79,7 @@ export const featuredProject = {
 export const about = {
   role: 'AI Agent 应用开发 · 前端',
   intro:
-    '现在在京东 Joybuy 做国际电商主站与 AI 工程：购物车核心链路、Agent 巡检和前端性能。之前在贝壳做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成 TrailForge。雅思 8 分，英文协作无障碍。',
+    '现在在京东 Joybuy 做国际电商主站与 AI 工程：购物车核心链路、Agent 巡检和前端性能。之前在贝壳做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成 TrailForge。雅思 8 分。',
   highlights: [
     {
       title: 'Joybuy · 购物车与 AI 工程',
@@ -94,7 +94,7 @@ export const about = {
       body: '楼盘字典支撑 40 万经纪人；搭了 2+ 条 PRD→Coding Agent 工作流，集团内 200+ 人在用。入职半年 P4→P5。',
     },
   ],
-  focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO', '雅思 8 分'],
+  focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO'],
 }
 
 export const openSource = [

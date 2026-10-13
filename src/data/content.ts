@@ -18,6 +18,75 @@ export const featuredProject = {
     '可 fork 的店面和 Shopify 交付包。我重点做了三件事：答案写在首屏、商品事实只维护一份、重动效不拖首页。',
   demo: 'http://117.72.122.109:3088/',
   repo: 'https://github.com/GosuQuan/seo-geo-commerce',
+  highlights: [
+    { label: '在线演示（主入口）', href: 'http://117.72.122.109:3088/' },
+    { label: 'GitHub 仓库', href: 'https://github.com/GosuQuan/seo-geo-commerce' },
+    { label: 'Answer-first / GEO 可引用性', href: 'http://117.72.122.109:3088/products' },
+    { label: 'JSON-LD · 单一事实源', href: 'http://117.72.122.109:3088/audit' },
+    { label: '动效懒加载 · 保首屏', href: 'http://117.72.122.109:3088/effects' },
+    { label: '购物车→打赏流程', href: 'http://117.72.122.109:3088/tip' },
+    { label: 'Shopify Liquid 交付包', href: 'https://github.com/GosuQuan/seo-geo-commerce/tree/main/docs/shopify' },
+  ],
+  demos: [
+    {
+      src: '/demos/home.jpg',
+      title: '首页 · Answer-first + 商品 3D',
+      body: '首屏先给可引用的短结论，右侧是可拖的 R3F 商品场景；底部标签把 JSON-LD、Facts API、llms.txt 等能力摊开给访客。',
+      href: 'http://117.72.122.109:3088/',
+    },
+    {
+      src: '/demos/products.jpg',
+      title: '商品列表 · 单一事实源',
+      body: '列表、详情页文案和 JSON-LD 共用同一套商品数据，改价格规格只动一处，避免页面和结构化数据两套稿对不上。',
+      href: 'http://117.72.122.109:3088/products',
+    },
+    {
+      src: '/demos/audit.jpg',
+      title: 'GEO 审计 · 可打分检查',
+      body: '按路由跑 Answer-first、Product JSON-LD、FAQ、Sitemap 等清单，示例商品页可拿到满分 A，改完立刻能自查。',
+      href: 'http://117.72.122.109:3088/audit',
+    },
+    {
+      src: '/demos/effects.jpg',
+      title: '动效实验室 · 按路由懒加载',
+      body: 'Motion / GSAP / Lottie / R3F 各自独立 demo 页，dynamic 懒加载，实验室再炫也不进商城首页主包。',
+      href: 'http://117.72.122.109:3088/effects',
+    },
+  ],
+  talkingPoints: [
+    {
+      title: 'Answer-first / GEO',
+      body: '首屏先给短结论，FAQ 和规格跟同一套数据，方便被搜到、也被 AI 引用，不是堆关键词。',
+    },
+    {
+      title: 'JSON-LD · 单一事实源',
+      body: '价格规格只在数据层改一次，页面文案和结构化数据一起走，少两套稿对不上。',
+    },
+    {
+      title: '动效懒加载',
+      body: 'R3F、Motion、Lottie 按路由再加载，实验室页再炫也不进首页主包。',
+    },
+    {
+      title: '电商实战 3D',
+      body: 'TrailForge 首页可拖商品 3D，R3F 场景按需加载，不拖垮首屏。',
+    },
+  ],
+  stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'R3F', 'Framer Motion', 'Shopify Liquid'],
+  seoLine: '一份事实 + 答案前置，搜索和 AI 都更好用。',
+}
+
+
+export const about = {
+  role: 'AI Agent 应用开发 · 前端',
+  introLead: '现在在',
+  introMid: '做国际电商与 AI 工程，偏前端性能和 Agent 落地。之前在',
+  introAfterKe: '做 B 端业务与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成',
+  introEnd: '。雅思 8 分。',
+  companies: [
+    { id: 'jd', name: '京东 Joybuy', logo: '/logos/jd.png', href: 'https://www.joybuy.com/' },
+    { id: 'ke', name: '贝壳', logo: '/logos/ke.png', href: 'https://www.ke.com/' },
+    { id: 'tf', name: 'TrailForge', logo: '/logos/trailforge.png', href: 'http://117.72.122.109:3088/' },
+  ],
   focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO'],
   hobbies: [
     { emoji: '🥾', label: '徒步' },

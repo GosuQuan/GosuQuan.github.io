@@ -10,6 +10,15 @@ const fade: Variants = {
   }),
 }
 
+function Blurb() {
+  return (
+    <>
+      <span className="sm:hidden">{profile.blurbShort}</span>
+      <span className="hidden sm:inline">{profile.blurb}</span>
+    </>
+  )
+}
+
 export function Hero() {
   const reduce = useReducedMotion()
 
@@ -33,28 +42,22 @@ export function Hero() {
     </div>
   )
 
-  const body = (
-    <div className="max-w-2xl">
-      <p className="text-[11px] tracking-[0.2em] text-slate-400 uppercase sm:text-xs sm:tracking-[0.24em]">
-        Portfolio for interviews
-      </p>
-      <h1 className="mt-2.5 text-[2.15rem] font-semibold leading-[1.12] tracking-tight text-white sm:mt-5 sm:text-6xl">
-        {profile.name}
-      </h1>
-      <p className="mt-2 text-[15px] leading-snug text-slate-300 sm:mt-3 sm:text-xl">{profile.tagline}</p>
-      <p className="mt-3 text-[14px] leading-6 text-slate-400 sm:mt-6 sm:text-base sm:leading-7">{profile.blurb}</p>
-      {cta}
-      <div className="mt-8 flex items-center gap-3 text-[11px] text-slate-500 sm:mt-14 sm:text-xs">
-        <span className="h-6 w-px bg-gradient-to-b from-slate-400 to-transparent sm:h-8" />
-        {reduce ? '内容已按系统设置静态展示' : '向下滚动，分段动画展开'}
-      </div>
-    </div>
-  )
-
   if (reduce) {
     return (
       <section id="about" className="relative mx-auto max-w-6xl px-4 pb-10 pt-10 sm:min-h-[78vh] sm:px-5 sm:pb-20 sm:pt-28">
-        {body}
+        <div className="max-w-2xl">
+          <p className="text-[11px] tracking-[0.2em] text-slate-400 uppercase sm:text-xs sm:tracking-[0.24em]">Portfolio for interviews</p>
+          <h1 className="mt-2.5 text-[2.15rem] font-semibold leading-[1.12] tracking-tight text-white sm:mt-5 sm:text-6xl">{profile.name}</h1>
+          <p className="mt-2 text-[15px] leading-snug text-slate-300 sm:mt-3 sm:text-xl">{profile.tagline}</p>
+          <p className="mt-3 text-[14px] leading-6 text-slate-400 sm:mt-6 sm:text-base sm:leading-7">
+            <Blurb />
+          </p>
+          {cta}
+          <div className="mt-8 flex items-center gap-3 text-[11px] text-slate-500 sm:mt-14 sm:text-xs">
+            <span className="h-6 w-px bg-gradient-to-b from-slate-400 to-transparent sm:h-8" />
+            内容已按系统设置静态展示
+          </div>
+        </div>
       </section>
     )
   }
@@ -72,14 +75,14 @@ export function Hero() {
           {profile.tagline}
         </motion.p>
         <motion.p custom={3} variants={fade} initial="hidden" animate="show" className="mt-3 text-[14px] leading-6 text-slate-400 sm:mt-6 sm:text-base sm:leading-7">
-          {profile.blurb}
+          <Blurb />
         </motion.p>
         <motion.div custom={4} variants={fade} initial="hidden" animate="show">
           {cta}
         </motion.div>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.6 }} className="mt-8 flex items-center gap-3 text-[11px] text-slate-500 sm:mt-14 sm:text-xs">
           <span className="h-6 w-px bg-gradient-to-b from-slate-400 to-transparent sm:h-8" />
-          向下滚动，分段动画展开
+          上下滚动都有分段过渡
         </motion.div>
       </div>
     </section>

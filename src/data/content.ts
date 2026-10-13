@@ -4,6 +4,7 @@ export const profile = {
   tagline: '全栈 · SEO/GEO · 开源与工程交付',
   blurb:
     '用开源项目证明能力的个人作品集，方便面试时快速讲清：我做了什么、为什么这么做、效果在哪。重点是可讲清楚的工程决策，而不是堆栈清单。',
+  blurbShort: '开源作品集，面试把工程决策讲清楚。',
   github: 'https://github.com/GosuQuan',
   email: '',
 }

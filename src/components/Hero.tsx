@@ -53,10 +53,6 @@ export function Hero() {
             <Blurb />
           </p>
           {cta}
-          <div className="mt-8 flex items-center gap-3 text-[11px] text-slate-500 sm:mt-14 sm:text-xs">
-            <span className="h-6 w-px bg-gradient-to-b from-slate-400 to-transparent sm:h-8" />
-            内容已按系统设置静态展示
-          </div>
         </div>
       </section>
     )
@@ -79,10 +75,6 @@ export function Hero() {
         </motion.p>
         <motion.div custom={4} variants={fade} initial="hidden" animate="show">
           {cta}
-        </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.6 }} className="mt-8 flex items-center gap-3 text-[11px] text-slate-500 sm:mt-14 sm:text-xs">
-          <span className="h-6 w-px bg-gradient-to-b from-slate-400 to-transparent sm:h-8" />
-          上下滚动都有分段过渡
         </motion.div>
       </div>
     </section>

@@ -30,9 +30,16 @@ export function About() {
 
       <Reveal tone="scale" delay={0.1} className="mt-8">
         <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">工作技术</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {about.focus.map((f) => (
-            <BrandTag key={f.label} label={f.label} logo={f.logo} />
+        <div className="mt-4 space-y-5">
+          {about.focusGroups.map((group) => (
+            <div key={group.title}>
+              <p className="mb-2 text-[11px] font-medium tracking-wide text-slate-500">{group.title}</p>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((f) => (
+                  <BrandTag key={f.label} label={f.label} logo={f.logo} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </Reveal>

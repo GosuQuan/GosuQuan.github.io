@@ -75,14 +75,7 @@ export function About() {
       </div>
 
       <Reveal tone="scale" delay={0.1} className="mt-6">
-        <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">Off work</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {about.hobbies.map((h) => (
-            <span key={h} className="rounded-full bg-white/[0.06] px-3 py-1.5 text-xs text-slate-300 ring-1 ring-white/10">
-              {h}
-            </span>
-          ))}
-        </div>
+        <p className="max-w-2xl text-sm leading-7 text-slate-500">{about.hobbyLine}</p>
         <div className="mt-5 flex flex-wrap gap-2">
           {about.focus.map((f) => (
             <span key={f} className="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-400 ring-1 ring-white/8">

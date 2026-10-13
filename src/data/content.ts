@@ -105,7 +105,7 @@ export const about = {
     },
   ],
   focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO'],
-  hobbies: ['徒步', '羽毛球单打', '探店', '旅行', '健身', '架子鼓（找搭子中）'],
+  hobbyLine: '徒步、羽毛球单打、探店旅行、健身；架子鼓找搭子中。',
 }
 
 export const openSource = [

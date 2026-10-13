@@ -7,7 +7,7 @@ export const profile = {
     '开源项目与工程实践的个人站点。',
   blurbShort: '开源与工程实践。',
   github: 'https://github.com/GosuQuan',
-  email: '',
+  email: 'ikingsleyes@gmail.com',
 }
 
 export const featuredProject = {
@@ -73,6 +73,28 @@ export const featuredProject = {
   ],
   stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'R3F', 'Framer Motion', 'Shopify Liquid'],
   seoLine: '一份事实 + 答案前置，搜索和 AI 都更好用。',
+}
+
+
+export const about = {
+  role: 'AI Agent 应用开发 · 前端',
+  intro:
+    '现在在京东 Joybuy 做国际电商主站与 AI 工程：购物车核心链路、Agent 巡检和前端性能。之前在贝壳做楼盘字典与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成 TrailForge。',
+  highlights: [
+    {
+      title: 'Joybuy · 购物车与 AI 工程',
+      body: '百万级 DAU 购物车 PC/H5 架构；AI Review 用规则引擎兜底越权与结算路径，模型只补语义。业务侧 TTFB 缩短 34%，LCP 从 1.7s 到 1.3s。',
+    },
+    {
+      title: 'DongGUI · 巡检 Agent',
+      body: 'Plan-Execute-Evaluate-Repair + RAG：页面知识缓存命中 70%+，LLM 调用约降 80%，Token 约降 45%；多模型路由把巡检耗时再压约 30%。',
+    },
+    {
+      title: '贝壳 · 从业务到内部 AI',
+      body: '楼盘字典支撑 40 万经纪人；搭了 2+ 条 PRD→Coding Agent 工作流，集团内 200+ 人在用。入职半年 P4→P5。',
+    },
+  ],
+  focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO'],
 }
 
 export const openSource = [

@@ -8,9 +8,16 @@ export function Footer() {
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] px-6 py-10 backdrop-blur-xl sm:px-10">
           <h2 className="text-2xl font-semibold text-white">联系</h2>
           <p className="mt-2 max-w-lg text-sm text-slate-400">开源协作，欢迎看仓库和演示。</p>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-full bg-[#f4f4f5] px-4 py-2 text-sm font-semibold hover:bg-white" style={{ color: "#09090b" }}>
-            github.com/GosuQuan
-          </a>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={profile.github} target="_blank" rel="noreferrer" className="inline-flex rounded-full bg-[#f4f4f5] px-4 py-2 text-sm font-semibold hover:bg-white" style={{ color: "#09090b" }}>
+              github.com/GosuQuan
+            </a>
+            {profile.email ? (
+              <a href={`mailto:${profile.email}`} className="inline-flex rounded-full border border-white/15 px-4 py-2 text-sm text-slate-300">
+                发邮件
+              </a>
+            ) : null}
+          </div>
           <p className="mt-8 text-xs text-slate-600">© {new Date().getFullYear()} {profile.name}</p>
         </div>
       </Reveal>

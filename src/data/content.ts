@@ -14,7 +14,7 @@ export const featuredProject = {
   name: 'TrailForge 峰途',
   subtitle: '开源电商演示 · SEO/GEO',
   description:
-    '可 fork 的店面和 Shopify 交付包。项目里我重点做了三件事：答案怎么写在首屏、商品事实怎么只维护一份、重动效怎么不拖首页。',
+    '可 fork 的店面和 Shopify 交付包。我重点做了三件事：答案写在首屏、商品事实只维护一份、重动效不拖首页。',
   demo: 'http://117.72.122.109:3088/',
   repo: 'https://github.com/GosuQuan/seo-geo-commerce',
   highlights: [

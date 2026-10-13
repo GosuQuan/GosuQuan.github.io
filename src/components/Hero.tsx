@@ -5,34 +5,17 @@ import { profile } from '../data/content'
 const HeroScene = lazy(() => import('./HeroScene'))
 
 const fade: Variants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 18 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.08 * i, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: 0.06 * i, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   }),
 }
 
-function StaticTechBackdrop() {
+function SoftFallback() {
   return (
-    <div
-      aria-hidden
-      className="absolute inset-0 overflow-hidden rounded-3xl border border-cyan-400/10 bg-[radial-gradient(circle_at_30%_20%,rgba(103,232,249,0.16),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(167,139,250,0.14),transparent_40%),linear-gradient(160deg,#071018,#05060a)]"
-    >
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(34,211,238,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.12) 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
-          maskImage: 'radial-gradient(circle at center, black 30%, transparent 75%)',
-        }}
-      />
-      <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rotate-12 rounded-xl border border-cyan-300/40 shadow-[0_0_40px_rgba(103,232,249,0.25)]" />
-      <div className="absolute left-[28%] top-[38%] h-3 w-3 rounded-full bg-emerald-300/80" />
-      <div className="absolute right-[30%] top-[42%] h-3 w-3 rounded-full bg-violet-300/80" />
-      <div className="absolute bottom-[28%] left-[40%] h-2 w-2 rounded-full bg-cyan-200/70" />
-    </div>
+    <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-slate-800/60 via-slate-900 to-slate-950 ring-1 ring-white/10" />
   )
 }
 
@@ -44,10 +27,7 @@ export function Hero() {
     const mq = window.matchMedia('(min-width: 1024px)')
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
     const coarse = window.matchMedia('(pointer: coarse)')
-    const update = () => {
-      // Desktop-ish only; phones get static fallback
-      setAllow3d(mq.matches && !reduce.matches && !coarse.matches)
-    }
+    const update = () => setAllow3d(mq.matches && !reduce.matches && !coarse.matches)
     update()
     mq.addEventListener('change', update)
     reduce.addEventListener('change', update)
@@ -64,89 +44,41 @@ export function Hero() {
       setMount3d(false)
       return
     }
-    const idle = (window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback
-    if (idle) {
-      const id = idle(() => setMount3d(true), { timeout: 1200 })
-      return () => {
-        ;(window as Window & { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback?.(id)
-      }
-    }
-    const t = window.setTimeout(() => setMount3d(true), 400)
+    const t = window.setTimeout(() => setMount3d(true), 300)
     return () => window.clearTimeout(t)
   }, [allow3d])
 
   return (
-    <section id="about" className="relative mx-auto max-w-6xl overflow-hidden px-5 pb-20 pt-16 sm:pt-24">
-      <div className="pointer-events-none absolute inset-y-4 right-[-4%] hidden w-[52%] lg:block">
-        <div className="pointer-events-auto relative h-full min-h-[420px]">
-          {allow3d && mount3d ? (
-            <Suspense fallback={<StaticTechBackdrop />}>
-              <HeroScene />
-            </Suspense>
-          ) : (
-            <StaticTechBackdrop />
-          )}
-        </div>
-      </div>
-
-      <div className="relative mb-8 h-40 overflow-hidden rounded-3xl lg:hidden">
-        <StaticTechBackdrop />
-      </div>
-
-      <div className="relative z-10 max-w-xl lg:max-w-2xl">
-        <motion.p
-          custom={0}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className="mb-4 text-sm uppercase tracking-[0.28em] text-cyan-200/70"
-        >
-          Resume · Open Source · Interview Ready
+    <section id="about" className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pt-20">
+      <div>
+        <motion.p custom={0} variants={fade} initial="hidden" animate="show" className="text-xs tracking-[0.22em] text-slate-400 uppercase">
+          Portfolio for interviews
         </motion.p>
-        <motion.h1
-          custom={1}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl"
-        >
-          介绍我做过的开源，
-          <span className="bg-gradient-to-r from-cyan-300 via-violet-300 to-emerald-300 bg-clip-text text-transparent">
-            方便面试讲清楚
-          </span>
+        <motion.h1 custom={1} variants={fade} initial="hidden" animate="show" className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          {profile.name}
+          <span className="mt-3 block text-xl font-normal text-slate-400 sm:text-2xl">{profile.tagline}</span>
         </motion.h1>
-        <motion.p
-          custom={2}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className="mt-6 text-base leading-relaxed text-white/60 sm:text-lg"
-        >
+        <motion.p custom={2} variants={fade} initial="hidden" animate="show" className="mt-6 max-w-xl text-base leading-7 text-slate-400">
           {profile.blurb}
         </motion.p>
-        <motion.div
-          custom={3}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className="mt-10 flex flex-wrap gap-3"
-        >
-          <a
-            href="#work"
-            className="rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 px-5 py-2.5 text-sm font-semibold text-[#05060a] shadow-[0_0_40px_rgba(110,231,255,0.25)] transition hover:brightness-110"
-          >
-            看主开源案例
+        <motion.div custom={3} variants={fade} initial="hidden" animate="show" className="mt-8 flex flex-wrap gap-3">
+          <a href="#work" className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-slate-950 hover:bg-slate-200">
+            主开源案例
           </a>
-          <a
-            href="#writing"
-            className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-white/80 transition hover:border-cyan-300/40 hover:text-cyan-100"
-          >
-            面试可讲点
+          <a href={profile.github} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-5 py-2.5 text-sm text-slate-300 hover:border-white/30">
+            GitHub
           </a>
         </motion.div>
-        <p className="mt-4 text-xs text-white/35">
-          桌面端：抽象拓扑 3D 懒加载 · 手机端：静态降级 · 商品级 R3D 见 TrailForge 首页
-        </p>
+      </div>
+
+      <div className="relative h-56 overflow-hidden rounded-[2rem] ring-1 ring-white/10 sm:h-72 lg:h-[420px]">
+        {allow3d && mount3d ? (
+          <Suspense fallback={<SoftFallback />}>
+            <HeroScene />
+          </Suspense>
+        ) : (
+          <SoftFallback />
+        )}
       </div>
     </section>
   )

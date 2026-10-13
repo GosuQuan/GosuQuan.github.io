@@ -17,11 +17,11 @@ export const featuredProject = {
   demo: 'http://117.72.122.109:3088/',
   repo: 'https://github.com/GosuQuan/seo-geo-commerce',
   highlights: [
+    { label: '电商实战 3D（首页英雄区）', href: 'http://117.72.122.109:3088/' },
     { label: 'Answer-first / GEO 可引用性', href: 'http://117.72.122.109:3088/products' },
     { label: 'JSON-LD · 单一事实源', href: 'http://117.72.122.109:3088/audit' },
     { label: '动效懒加载 · 保首屏', href: 'http://117.72.122.109:3088/effects' },
     { label: '购物车→打赏流程', href: 'http://117.72.122.109:3088/tip' },
-    { label: '作品集页（演示内）', href: 'http://117.72.122.109:3088/portfolio' },
     { label: 'Shopify Liquid 交付包', href: 'https://github.com/GosuQuan/seo-geo-commerce/tree/main/docs/shopify' },
   ],
   talkingPoints: [
@@ -36,6 +36,10 @@ export const featuredProject = {
     {
       title: '动效懒加载',
       body: 'R3F / Motion 按需加载，实验室与 Lottie 不影响首页关键路径性能。',
+    },
+    {
+      title: '电商实战 3D',
+      body: '商品级可拖 R3F 在 TrailForge 首页英雄区；简历站用抽象拓扑，两边不撞车。',
     },
   ],
   stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'R3F', 'Framer Motion', 'Shopify Liquid'],

@@ -13,10 +13,57 @@ const fade: Variants = {
   }),
 }
 
+function StaticTechBackdrop() {
+  return (
+    <div
+      aria-hidden
+      className="absolute inset-0 overflow-hidden rounded-3xl border border-cyan-400/10 bg-[radial-gradient(circle_at_30%_20%,rgba(103,232,249,0.16),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(167,139,250,0.14),transparent_40%),linear-gradient(160deg,#071018,#05060a)]"
+    >
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(34,211,238,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.12) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+          maskImage: 'radial-gradient(circle at center, black 30%, transparent 75%)',
+        }}
+      />
+      <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rotate-12 rounded-xl border border-cyan-300/40 shadow-[0_0_40px_rgba(103,232,249,0.25)]" />
+      <div className="absolute left-[28%] top-[38%] h-3 w-3 rounded-full bg-emerald-300/80" />
+      <div className="absolute right-[30%] top-[42%] h-3 w-3 rounded-full bg-violet-300/80" />
+      <div className="absolute bottom-[28%] left-[40%] h-2 w-2 rounded-full bg-cyan-200/70" />
+    </div>
+  )
+}
+
 export function Hero() {
   const [mount3d, setMount3d] = useState(false)
+  const [allow3d, setAllow3d] = useState(false)
 
   useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)')
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const coarse = window.matchMedia('(pointer: coarse)')
+    const update = () => {
+      // Desktop-ish only; phones get static fallback
+      setAllow3d(mq.matches && !reduce.matches && !coarse.matches)
+    }
+    update()
+    mq.addEventListener('change', update)
+    reduce.addEventListener('change', update)
+    coarse.addEventListener('change', update)
+    return () => {
+      mq.removeEventListener('change', update)
+      reduce.removeEventListener('change', update)
+      coarse.removeEventListener('change', update)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!allow3d) {
+      setMount3d(false)
+      return
+    }
     const idle = (window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback
     if (idle) {
       const id = idle(() => setMount3d(true), { timeout: 1200 })
@@ -26,28 +73,25 @@ export function Hero() {
     }
     const t = window.setTimeout(() => setMount3d(true), 400)
     return () => window.clearTimeout(t)
-  }, [])
+  }, [allow3d])
 
   return (
     <section id="about" className="relative mx-auto max-w-6xl overflow-hidden px-5 pb-20 pt-16 sm:pt-24">
-      <div className="pointer-events-none absolute inset-y-0 right-[-8%] w-full opacity-40 lg:opacity-100 lg:w-[52%] block max-h-[280px] lg:max-h-none">
-        <div className="pointer-events-auto h-full min-h-[420px]">
-          {mount3d ? (
-            <Suspense fallback={<div className="h-full animate-pulse rounded-full bg-cyan-400/5" />}>
+      <div className="pointer-events-none absolute inset-y-4 right-[-4%] hidden w-[52%] lg:block">
+        <div className="pointer-events-auto relative h-full min-h-[420px]">
+          {allow3d && mount3d ? (
+            <Suspense fallback={<StaticTechBackdrop />}>
               <HeroScene />
             </Suspense>
           ) : (
-            <div className="h-full animate-pulse rounded-full bg-gradient-to-br from-cyan-400/10 to-violet-500/10" />
+            <StaticTechBackdrop />
           )}
         </div>
       </div>
 
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl lg:hidden"
-        animate={{ x: [0, 40, 0], y: [0, 20, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-      />
+      <div className="relative mb-8 h-40 overflow-hidden rounded-3xl lg:hidden">
+        <StaticTechBackdrop />
+      </div>
 
       <div className="relative z-10 max-w-xl lg:max-w-2xl">
         <motion.p
@@ -57,7 +101,7 @@ export function Hero() {
           animate="show"
           className="mb-4 text-sm uppercase tracking-[0.28em] text-cyan-200/70"
         >
-          Resume · Open Source · 3D Motion
+          Resume · Open Source · Interview Ready
         </motion.p>
         <motion.h1
           custom={1}
@@ -100,7 +144,9 @@ export function Hero() {
             面试可讲点
           </a>
         </motion.div>
-        <p className="mt-4 text-xs text-white/35">右侧 3D 场景懒加载 · 拖动可旋转 · 不阻塞首屏文案</p>
+        <p className="mt-4 text-xs text-white/35">
+          桌面端：抽象拓扑 3D 懒加载 · 手机端：静态降级 · 商品级 R3D 见 TrailForge 首页
+        </p>
       </div>
     </section>
   )

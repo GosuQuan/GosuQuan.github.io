@@ -20,7 +20,7 @@ export function Hero() {
       <p className="mt-3 text-lg text-slate-300 sm:text-xl">{profile.tagline}</p>
       <p className="mt-6 max-w-xl text-base leading-7 text-slate-400">{profile.blurb}</p>
       <div className="mt-10 flex flex-wrap gap-3">
-        <a href="#work" className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black backdrop-blur hover:bg-white">
+        <a href="#work" className="rounded-full bg-[#f4f4f5] px-5 py-2.5 text-sm font-semibold backdrop-blur hover:bg-white" style={{ color: "#09090b" }}>
           主开源案例
         </a>
         <a href={profile.github} target="_blank" rel="noreferrer" className="rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm text-slate-200 backdrop-blur hover:bg-white/10">
@@ -58,7 +58,7 @@ export function Hero() {
           {profile.blurb}
         </motion.p>
         <motion.div custom={4} variants={fade} initial="hidden" animate="show" className="mt-10 flex flex-wrap gap-3">
-          <a href="#work" className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black backdrop-blur hover:bg-white">
+          <a href="#work" className="rounded-full bg-[#f4f4f5] px-5 py-2.5 text-sm font-semibold backdrop-blur hover:bg-white" style={{ color: "#09090b" }}>
             主开源案例
           </a>
           <a href={profile.github} target="_blank" rel="noreferrer" className="rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm text-slate-200 backdrop-blur hover:bg-white/10">

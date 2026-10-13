@@ -1,4 +1,5 @@
 import { Background3D } from './components/Background3D'
+import { SoftLight } from './components/SoftLight'
 import { Featured } from './components/Featured'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
@@ -10,7 +11,8 @@ export default function App() {
   return (
     <div className="relative min-h-screen">
       <Background3D />
-      <Nav />
+      <SoftLight />
+      <div className="relative z-10"><Nav />
       <main>
         <Hero />
         <Featured />
@@ -18,6 +20,7 @@ export default function App() {
         <Writing />
       </main>
       <Footer />
+      </div>
     </div>
   )
 }

@@ -105,7 +105,14 @@ export const about = {
     },
   ],
   focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO'],
-  hobbyLine: '徒步、羽毛球单打、探店旅行、健身；架子鼓找搭子中。',
+  hobbies: [
+    { emoji: '🥾', label: '徒步' },
+    { emoji: '🏸', label: '羽毛球单打' },
+    { emoji: '🍜', label: '探店' },
+    { emoji: '✈️', label: '旅行' },
+    { emoji: '💪', label: '健身' },
+    { emoji: '🥁', label: '架子鼓（找搭子中）' },
+  ],
 }
 
 export const openSource = [

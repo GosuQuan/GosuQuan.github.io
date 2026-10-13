@@ -75,7 +75,17 @@ export function About() {
       </div>
 
       <Reveal tone="scale" delay={0.1} className="mt-6">
-        <p className="max-w-2xl text-sm leading-7 text-slate-500">{about.hobbyLine}</p>
+        <div className="flex flex-wrap gap-2">
+          {about.hobbies.map((h) => (
+            <span
+              key={h.label}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.06] px-3 py-1.5 text-xs text-slate-300"
+            >
+              <span aria-hidden="true">{h.emoji}</span>
+              {h.label}
+            </span>
+          ))}
+        </div>
         <div className="mt-5 flex flex-wrap gap-2">
           {about.focus.map((f) => (
             <span key={f} className="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-400 ring-1 ring-white/8">

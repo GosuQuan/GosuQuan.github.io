@@ -1,4 +1,5 @@
 import { featuredProject } from '../data/content'
+import { BrandTag } from './BrandTag'
 import { Reveal } from './Reveal'
 
 export function Featured() {
@@ -56,35 +57,8 @@ export function Featured() {
 
           <div className="mt-10 flex flex-wrap gap-2">
             {p.highlights.map((h) => (
-              <a
-                key={h.label}
-                href={h.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-300 ring-1 ring-white/10 hover:bg-white/10"
-              >
-                {h.label}
-              </a>
+              <BrandTag key={h.label} label={h.label} logo={h.logo} href={h.href} />
             ))}
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={p.demo}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-[#f4f4f5] px-4 py-2 text-sm font-semibold hover:bg-white"
-              style={{ color: '#09090b' }}
-            >
-              打开演示
-            </a>
-            <a
-              href={p.repo}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/15 px-4 py-2 text-sm text-slate-300"
-            >
-              GitHub 仓库
-            </a>
           </div>
         </article>
       </Reveal>

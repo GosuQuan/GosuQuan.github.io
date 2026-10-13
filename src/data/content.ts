@@ -19,13 +19,12 @@ export const featuredProject = {
   demo: 'http://117.72.122.109:3088/',
   repo: 'https://github.com/GosuQuan/seo-geo-commerce',
   highlights: [
-    { label: '在线演示（主入口）', href: 'http://117.72.122.109:3088/' },
-    { label: 'GitHub 仓库', href: 'https://github.com/GosuQuan/seo-geo-commerce' },
-    { label: 'Answer-first / GEO 可引用性', href: 'http://117.72.122.109:3088/products' },
-    { label: 'JSON-LD · 单一事实源', href: 'http://117.72.122.109:3088/audit' },
-    { label: '动效懒加载 · 保首屏', href: 'http://117.72.122.109:3088/effects' },
-    { label: '购物车→打赏流程', href: 'http://117.72.122.109:3088/tip' },
-    { label: 'Shopify Liquid 交付包', href: 'https://github.com/GosuQuan/seo-geo-commerce/tree/main/docs/shopify' },
+    { label: '打开演示', logo: '/logos/tech/demo.svg', href: 'http://117.72.122.109:3088/' },
+    { label: 'GitHub', logo: '/logos/tech/github.svg', href: 'https://github.com/GosuQuan/seo-geo-commerce' },
+    { label: 'Shopify Liquid', logo: '/logos/tech/shopify.svg', href: 'https://github.com/GosuQuan/seo-geo-commerce/tree/main/docs/shopify' },
+    { label: 'Answer-first / GEO', logo: '/logos/tech/seo.svg', href: 'http://117.72.122.109:3088/products' },
+    { label: 'JSON-LD 事实源', logo: '/logos/tech/seo.svg', href: 'http://117.72.122.109:3088/audit' },
+    { label: '动效实验室', logo: '/logos/tech/react.svg', href: 'http://117.72.122.109:3088/effects' },
   ],
   demos: [
     {

@@ -93,6 +93,7 @@ export const about = {
     { label: '性能与可观测', logo: '/logos/tech/observability.svg' },
     { label: 'SEO / GEO', logo: '/logos/tech/seo.svg' },
   ],
+  hobbyBlurb: '工作之余也爱「乱投资」，偶尔锐评时政和美股——还想搞个大新闻。',
   hobbies: [
     { emoji: '🥾', label: '徒步' },
     { emoji: '🏸', label: '羽毛球单打' },

@@ -39,7 +39,8 @@ export function About() {
 
       <Reveal tone="scale" delay={0.14} className="mt-8">
         <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">工作之余</p>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">{about.hobbyBlurb}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
           {about.hobbies.map((h) => (
             <BrandTag key={h.label} label={h.label} emoji={h.emoji} />
           ))}

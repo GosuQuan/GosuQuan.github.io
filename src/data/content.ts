@@ -42,7 +42,7 @@ export const featuredProject = {
     },
     {
       title: '电商实战 3D',
-      body: '商品级可拖 3D 在 TrailForge 首页；简历站用抽象晶体，两边分工清楚。',
+      body: 'TrailForge 首页可拖商品 3D，R3F 场景按需加载，不拖垮首屏。',
     },
   ],
   stack: ['Next.js 15', 'TypeScript', 'Tailwind', 'R3F', 'Framer Motion', 'Shopify Liquid'],

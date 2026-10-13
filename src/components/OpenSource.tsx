@@ -24,7 +24,7 @@ export function OpenSource() {
         ))}
         <Reveal tone="scale" delay={0.1}>
           <div className="flex h-full items-center rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent p-5 text-sm text-slate-400">
-            更多开源会陆续挂上；简历站与 TrailForge 商品 3D 分开，避免同质化。
+            更多开源会陆续挂上。
           </div>
         </Reveal>
       </div>

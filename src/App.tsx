@@ -1,3 +1,4 @@
+import { LocaleProvider } from './i18n/LocaleProvider'
 import { Background3D } from './components/Background3D'
 import { SoftLight } from './components/SoftLight'
 import { Featured } from './components/Featured'
@@ -9,18 +10,21 @@ import { OpenSource } from './components/OpenSource'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen">
-      <Background3D />
-      <SoftLight />
-      <div className="relative z-10 isolate"><Nav />
-      <main>
-        <Hero />
-        <Featured />
-        <OpenSource />
-        <About />
-      </main>
-      <Footer />
+    <LocaleProvider>
+      <div className="relative min-h-screen">
+        <Background3D />
+        <SoftLight />
+        <div className="relative z-10 isolate">
+          <Nav />
+          <main>
+            <Hero />
+            <Featured />
+            <OpenSource />
+            <About />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </LocaleProvider>
   )
 }

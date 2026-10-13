@@ -1,13 +1,14 @@
-import { featuredProject } from '../data/content'
+import { useLocale } from '../i18n/LocaleProvider'
 import { BrandTag } from './BrandTag'
 import { Reveal } from './Reveal'
 
 export function Featured() {
-  const p = featuredProject
+  const { t } = useLocale()
+  const p = t.featured
   return (
     <section id="work" className="mx-auto max-w-6xl px-4 py-10 sm:px-5 sm:py-20">
       <Reveal tone="blur">
-        <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">Open source</p>
+        <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">{p.eyebrow}</p>
         <h2 className="mt-2 text-3xl font-semibold text-white sm:text-4xl">{p.name}</h2>
         <p className="mt-2 text-slate-400">{p.subtitle}</p>
       </Reveal>
@@ -46,7 +47,7 @@ export function Featured() {
                       </h3>
                       <p className="mt-3 text-sm leading-7 text-slate-400">{demo.body}</p>
                       <span className="mt-4 inline-flex text-xs text-slate-500 transition group-hover:text-slate-300">
-                        打开对应页面 →
+                        {p.openPage}
                       </span>
                     </div>
                   </a>

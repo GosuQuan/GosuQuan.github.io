@@ -1,8 +1,10 @@
-import { about, profile } from '../data/content'
+import { useLocale } from '../i18n/LocaleProvider'
 import { BrandTag } from './BrandTag'
 import { Reveal } from './Reveal'
 
 export function About() {
+  const { t } = useLocale()
+  const { about, profile } = t
   const byId = Object.fromEntries(about.companies.map((c) => [c.id, c]))
   const jd = byId.jd
   const ke = byId.ke
@@ -11,8 +13,8 @@ export function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-10 sm:px-5 sm:py-16">
       <Reveal tone="blur">
-        <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">About</p>
-        <h2 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">关于我</h2>
+        <p className="text-xs tracking-[0.2em] text-slate-500 uppercase">{about.eyebrow}</p>
+        <h2 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">{about.title}</h2>
         <p className="mt-2 text-sm text-slate-400">{about.role}</p>
       </Reveal>
 
@@ -29,7 +31,7 @@ export function About() {
       </Reveal>
 
       <Reveal tone="scale" delay={0.1} className="mt-8">
-        <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">工作技术</p>
+        <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">{about.workTech}</p>
         <div className="mt-4 space-y-5">
           {about.focusGroups.map((group) => (
             <div key={group.title}>
@@ -45,7 +47,7 @@ export function About() {
       </Reveal>
 
       <Reveal tone="scale" delay={0.14} className="mt-8">
-        <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">工作之余</p>
+        <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">{about.offWork}</p>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">{about.hobbyBlurb}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {about.hobbies.map((h) => (
@@ -53,7 +55,10 @@ export function About() {
           ))}
         </div>
         {profile.email ? (
-          <a href={`mailto:${profile.email}`} className="mt-6 inline-block text-sm text-slate-500 transition hover:text-slate-300">
+          <a
+            href={`mailto:${profile.email}`}
+            className="mt-6 inline-block text-sm text-slate-500 transition hover:text-slate-300"
+          >
             {profile.email}
           </a>
         ) : null}

@@ -1,33 +1,6 @@
 import { about, profile } from '../data/content'
+import { BrandTag } from './BrandTag'
 import { Reveal } from './Reveal'
-
-function CompanyTag({
-  name,
-  logo,
-  href,
-}: {
-  name: string
-  logo: string
-  href?: string
-}) {
-  const inner = (
-    <>
-      <img src={logo} alt="" width={16} height={16} className="h-4 w-4 rounded-[4px] object-contain" />
-      <span>{name}</span>
-    </>
-  )
-  const className =
-    'inline-flex translate-y-[-1px] items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.07] px-2.5 py-0.5 text-[13px] font-medium text-white/95 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] align-middle'
-
-  if (href) {
-    return (
-      <a href={href} target="_blank" rel="noreferrer" className={`${className} transition hover:border-white/25 hover:bg-white/[0.1]`}>
-        {inner}
-      </a>
-    )
-  }
-  return <span className={className}>{inner}</span>
-}
 
 export function About() {
   const byId = Object.fromEntries(about.companies.map((c) => [c.id, c]))
@@ -46,37 +19,33 @@ export function About() {
       <Reveal tone="fade-up" delay={0.06} className="mt-6">
         <p className="max-w-3xl text-sm leading-8 text-slate-300 sm:text-[15px] sm:leading-8">
           {about.introLead}{' '}
-          <CompanyTag {...jd} />{' '}
+          <BrandTag label={jd.name} logo={jd.logo} href={jd.href} />{' '}
           {about.introMid}{' '}
-          <CompanyTag {...ke} />{' '}
+          <BrandTag label={ke.name} logo={ke.logo} href={ke.href} />{' '}
           {about.introAfterKe}{' '}
-          <CompanyTag {...tf} />
+          <BrandTag label={tf.name} logo={tf.logo} href={tf.href} />
           {about.introEnd}
         </p>
       </Reveal>
 
-
-      <Reveal tone="scale" delay={0.1} className="mt-6">
-        <div className="flex flex-wrap gap-2">
-          {about.hobbies.map((h) => (
-            <span
-              key={h.label}
-              className="inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.06] px-3 py-1.5 text-xs text-slate-300"
-            >
-              <span aria-hidden="true">{h.emoji}</span>
-              {h.label}
-            </span>
+      <Reveal tone="scale" delay={0.1} className="mt-8">
+        <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">工作技术</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {about.focus.map((f) => (
+            <BrandTag key={f.label} label={f.label} logo={f.logo} />
           ))}
         </div>
-        <div className="mt-5 flex flex-wrap gap-2">
-          {about.focus.map((f) => (
-            <span key={f} className="rounded-full bg-white/5 px-3 py-1.5 text-xs text-slate-400 ring-1 ring-white/8">
-              {f}
-            </span>
+      </Reveal>
+
+      <Reveal tone="scale" delay={0.14} className="mt-8">
+        <p className="text-xs tracking-[0.18em] text-slate-500 uppercase">工作之余</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {about.hobbies.map((h) => (
+            <BrandTag key={h.label} label={h.label} emoji={h.emoji} />
           ))}
         </div>
         {profile.email ? (
-          <a href={`mailto:${profile.email}`} className="mt-5 inline-block text-sm text-slate-500 transition hover:text-slate-300">
+          <a href={`mailto:${profile.email}`} className="mt-6 inline-block text-sm text-slate-500 transition hover:text-slate-300">
             {profile.email}
           </a>
         ) : null}

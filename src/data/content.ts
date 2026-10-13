@@ -87,7 +87,13 @@ export const about = {
     { id: 'ke', name: '贝壳', logo: '/logos/ke.png', href: 'https://www.ke.com/' },
     { id: 'tf', name: 'TrailForge', logo: '/logos/trailforge.png', href: 'http://117.72.122.109:3088/' },
   ],
-  focus: ['Agent / LangGraph', 'React · Next.js', 'TypeScript', '性能与可观测', 'SEO / GEO'],
+  focus: [
+    { label: 'Agent / LangGraph', logo: '/logos/tech/agent.svg' },
+    { label: 'React · Next.js', logo: '/logos/tech/react.svg' },
+    { label: 'TypeScript', logo: '/logos/tech/typescript.svg' },
+    { label: '性能与可观测', logo: '/logos/tech/observability.svg' },
+    { label: 'SEO / GEO', logo: '/logos/tech/seo.svg' },
+  ],
   hobbies: [
     { emoji: '🥾', label: '徒步' },
     { emoji: '🏸', label: '羽毛球单打' },
@@ -103,7 +109,11 @@ export const openSource = [
     name: 'seo-geo-commerce',
     desc: 'SEO+GEO 电商 Demo · Shopify 交付包 · MIT',
     url: 'https://github.com/GosuQuan/seo-geo-commerce',
-    tags: ['Next.js', 'GEO', 'Shopify'],
+    tags: [
+      { label: 'Next.js', logo: '/logos/tech/nextjs.svg' },
+      { label: 'GEO', logo: '/logos/tech/seo.svg' },
+      { label: 'Shopify', logo: '/logos/tech/shopify.svg' },
+    ],
   },
 ]
 

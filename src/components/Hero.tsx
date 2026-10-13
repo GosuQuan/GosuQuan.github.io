@@ -10,12 +10,15 @@ const fade: Variants = {
   }),
 }
 
+const sectionClass =
+  'relative mx-auto flex min-h-[calc(100svh-3.75rem)] max-w-6xl flex-col items-center justify-center px-4 py-10 text-center sm:min-h-[72vh] sm:items-start sm:px-5 sm:pb-20 sm:pt-28 sm:text-left'
+
 export function Hero() {
   const reduce = useReducedMotion()
   const title = `${profile.displayName} 的作品集`
 
   const cta = (
-    <div className="mt-6 flex w-full flex-col gap-2.5 sm:mt-8 sm:w-auto sm:flex-row sm:gap-3">
+    <div className="mt-6 flex w-full max-w-xs flex-col gap-2.5 sm:mt-8 sm:max-w-none sm:w-auto sm:flex-row sm:gap-3">
       <a
         href="#work"
         className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#f4f4f5] px-5 py-2.5 text-sm font-semibold text-[#09090b] hover:bg-white"
@@ -41,7 +44,7 @@ export function Hero() {
   )
 
   const block = (
-    <div className="max-w-2xl">
+    <div className="flex w-full max-w-2xl flex-col items-center sm:items-start">
       <p className="text-[11px] font-medium tracking-[0.28em] text-slate-500 uppercase">Portfolio</p>
       <h1 className="mt-3 font-serif text-[2.2rem] font-normal leading-[1.15] tracking-tight text-white sm:mt-4 sm:text-5xl md:text-6xl">
         {title}
@@ -57,15 +60,15 @@ export function Hero() {
 
   if (reduce) {
     return (
-      <section id="top" className="relative mx-auto max-w-6xl px-4 pb-12 pt-12 sm:min-h-[72vh] sm:px-5 sm:pb-20 sm:pt-28">
+      <section id="top" className={sectionClass}>
         {block}
       </section>
     )
   }
 
   return (
-    <section id="top" className="relative mx-auto max-w-6xl px-4 pb-12 pt-12 sm:min-h-[72vh] sm:px-5 sm:pb-20 sm:pt-28">
-      <div className="max-w-2xl">
+    <section id="top" className={sectionClass}>
+      <div className="flex w-full max-w-2xl flex-col items-center sm:items-start">
         <motion.p custom={0} variants={fade} initial="hidden" animate="show" className="text-[11px] font-medium tracking-[0.28em] text-slate-500 uppercase">
           Portfolio
         </motion.p>
@@ -85,7 +88,7 @@ export function Hero() {
           <span className="sm:hidden">{profile.blurbShort}</span>
           <span className="hidden sm:inline">{profile.blurb}</span>
         </motion.p>
-        <motion.div custom={4} variants={fade} initial="hidden" animate="show">
+        <motion.div custom={4} variants={fade} initial="hidden" animate="show" className="flex w-full justify-center sm:justify-start">
           {cta}
         </motion.div>
       </div>

@@ -76,7 +76,7 @@ export const featuredProject = {
 
 
 export const about = {
-  role: 'AI Agent 应用开发 · 前端',
+  role: 'AI Agent 应用全栈开发',
   introLead: '现在在',
   introMid: '做国际电商与 AI 工程，偏前端性能和 Agent 落地。之前在',
   introAfterKe: '做 B 端业务与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成',

@@ -210,7 +210,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     about: {
       eyebrow: 'About',
       title: '关于我',
-      role: 'AI Agent 应用开发 · 前端',
+      role: 'AI Agent 应用全栈开发',
       introLead: '现在在',
       introMid: '做国际电商与 AI 工程，偏前端性能和 Agent 落地。之前在',
       introAfterKe: '做 B 端业务与内部 AI 工作流。业余把 SEO/GEO 电商实践开源成',
@@ -327,7 +327,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
     about: {
       eyebrow: 'About',
       title: 'About me',
-      role: 'AI agent apps · Frontend',
+      role: 'Full-stack AI Agent apps',
       introLead: 'Currently at',
       introMid: 'on international e-commerce and AI engineering—frontend performance and agent rollout. Previously at',
       introAfterKe: 'on B-side products and internal AI workflows. Off hours I open-sourced SEO/GEO commerce practice as',

@@ -30,11 +30,16 @@ export type SiteCopy = {
     eyebrow: string
     title: string
     more: string
+    highlightsLabel: string
+    contributionLabel: string
     items: {
       name: string
       desc: string
       url: string
       tags: { label: string; logo: string }[]
+      highlights: string[]
+      contribution: string
+      image?: string
     }[]
   }
   about: {
@@ -194,7 +199,29 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       eyebrow: 'Open source',
       title: '开源项目',
       more: '更多开源会陆续挂上。',
+      highlightsLabel: '亮点',
+      contributionLabel: '我做了什么',
       items: [
+        {
+          name: 'clash-auto-switch',
+          desc: 'Clash 节点劣化自动切换 · 延迟+吞吐双检 · 本地看板 · MIT',
+          url: 'https://github.com/GosuQuan/clash-auto-switch',
+          image: '/demos/clash-auto-switch.gif',
+          tags: [
+            { label: 'Python', logo: '/logos/tech/python.svg' },
+            { label: 'Observability', logo: '/logos/tech/observability.svg' },
+            { label: 'GitHub', logo: '/logos/tech/github.svg' },
+          ],
+          highlights: [
+            '延迟 + 真实吞吐双检，识别「假活」节点',
+            '地区黑名单 / 优先级与轮转抽样（禁港，日>新>台>美>英）',
+            '防抖：评分领先阈值 + 冷却 + 重试，减少来回跳',
+            '本地看板可追溯每次切换原因',
+            '单文件托盘应用，只调 mihomo API，不改 Clash 配置',
+          ],
+          contribution:
+            '独立从 0 到 1 完成：巡检与切换策略、吞吐实测、地区规则、防抖、本地 Web 看板与系统托盘、Windows / macOS 打包与 GitHub Actions CI。',
+        },
         {
           name: 'seo-geo-commerce',
           desc: 'SEO+GEO 电商 Demo · Shopify 交付包 · MIT',
@@ -204,6 +231,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
             { label: 'GEO', logo: '/logos/tech/seo.svg' },
             { label: 'Shopify', logo: '/logos/tech/shopify.svg' },
           ],
+          highlights: [
+            'Answer-first 首屏短答，方便搜索与 AI 引用',
+            '商品事实单一数据源，文案与 JSON-LD 同源',
+            '重动效按路由懒加载，不拖首页主包',
+          ],
+          contribution: '把 SEO/GEO 电商实践开源成 TrailForge 演示店面与 Shopify 交付包。',
         },
       ],
     },
@@ -311,7 +344,29 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       eyebrow: 'Open source',
       title: 'Open-source projects',
       more: 'More repos coming soon.',
+      highlightsLabel: 'Highlights',
+      contributionLabel: 'What I built',
       items: [
+        {
+          name: 'clash-auto-switch',
+          desc: 'Clash node failover · latency + throughput checks · local dashboard · MIT',
+          url: 'https://github.com/GosuQuan/clash-auto-switch',
+          image: '/demos/clash-auto-switch.gif',
+          tags: [
+            { label: 'Python', logo: '/logos/tech/python.svg' },
+            { label: 'Observability', logo: '/logos/tech/observability.svg' },
+            { label: 'GitHub', logo: '/logos/tech/github.svg' },
+          ],
+          highlights: [
+            'Latency + real throughput tests to catch “zombie” nodes',
+            'Region blacklist / priority with round-robin sampling (no HK; JP>SG>TW>US>UK)',
+            'Anti-flapping: score lead threshold, cooldown, and retries',
+            'Local dashboard that explains every switch',
+            'Single-file tray app — talks to the mihomo API only, never rewrites Clash config',
+          ],
+          contribution:
+            'Solo 0→1: health/switch strategy, throughput probes, region rules, anti-flapping, local web dashboard + system tray, Windows/macOS packaging, and GitHub Actions CI.',
+        },
         {
           name: 'seo-geo-commerce',
           desc: 'SEO+GEO commerce demo · Shopify pack · MIT',
@@ -321,6 +376,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
             { label: 'GEO', logo: '/logos/tech/seo.svg' },
             { label: 'Shopify', logo: '/logos/tech/shopify.svg' },
           ],
+          highlights: [
+            'Answer-first above the fold for search and AI citation',
+            'Single product facts source shared by copy and JSON-LD',
+            'Heavy motion lazy-loaded per route off the homepage bundle',
+          ],
+          contribution: 'Open-sourced SEO/GEO commerce practice as the TrailForge demo storefront and Shopify delivery pack.',
         },
       ],
     },

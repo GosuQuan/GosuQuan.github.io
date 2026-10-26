@@ -136,6 +136,26 @@ export const about = {
 
 export const openSource = [
   {
+    name: 'clash-auto-switch',
+    desc: 'Clash 节点劣化自动切换 · 延迟+吞吐双检 · 本地看板 · MIT',
+    url: 'https://github.com/GosuQuan/clash-auto-switch',
+    image: '/demos/clash-auto-switch.gif',
+    tags: [
+      { label: 'Python', logo: '/logos/tech/python.svg' },
+      { label: 'Observability', logo: '/logos/tech/observability.svg' },
+      { label: 'GitHub', logo: '/logos/tech/github.svg' },
+    ],
+    highlights: [
+      '延迟 + 真实吞吐双检，识别「假活」节点',
+      '地区黑名单 / 优先级与轮转抽样（禁港，日>新>台>美>英）',
+      '防抖：评分领先阈值 + 冷却 + 重试，减少来回跳',
+      '本地看板可追溯每次切换原因',
+      '单文件托盘应用，只调 mihomo API，不改 Clash 配置',
+    ],
+    contribution:
+      '独立从 0 到 1 完成：巡检与切换策略、吞吐实测、地区规则、防抖、本地 Web 看板与系统托盘、Windows / macOS 打包与 GitHub Actions CI。',
+  },
+  {
     name: 'seo-geo-commerce',
     desc: 'SEO+GEO 电商 Demo · Shopify 交付包 · MIT',
     url: 'https://github.com/GosuQuan/seo-geo-commerce',
@@ -144,6 +164,12 @@ export const openSource = [
       { label: 'GEO', logo: '/logos/tech/seo.svg' },
       { label: 'Shopify', logo: '/logos/tech/shopify.svg' },
     ],
+    highlights: [
+      'Answer-first 首屏短答，方便搜索与 AI 引用',
+      '商品事实单一数据源，文案与 JSON-LD 同源',
+      '重动效按路由懒加载，不拖首页主包',
+    ],
+    contribution: '把 SEO/GEO 电商实践开源成 TrailForge 演示店面与 Shopify 交付包。',
   },
 ]
 

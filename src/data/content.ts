@@ -136,27 +136,6 @@ export const about = {
 
 export const openSource = [
   {
-    name: 'listing-ops-agent',
-    desc: '跨境 Listing Ops Agent · LangGraph + 人工审批 · MIT',
-    url: 'https://github.com/GosuQuan/listing-ops-agent',
-    tags: [
-      { label: 'Python', logo: '/logos/tech/python.svg' },
-      { label: 'LangGraph / Agent', logo: '/logos/tech/agent.svg' },
-      { label: 'Tool Calling', logo: '/logos/tech/tools.svg' },
-    ],
-    howToRun: 'pip install -r requirements.txt && python demo.py（输入 approve 导出 JSON）',
-    architecture: 'diagnose → draft → human_approve(interrupt) → export（MemorySaver checkpoint）',
-    highlights: [
-      'HITL：必须 Approve 才导出，草稿不能直出',
-      '确定性诊断 / 草稿工具，LLM 可替换',
-      '目标把磨稿压到「分钟级草稿 + 短审批」（目标表述，非客户 ROI）',
-      '可测 diagnose_ms / draft_ms、审批率与规则命中',
-      '不直连平台写操作，只导出 + 审计边界',
-    ],
-    contribution:
-      '独立从 0 到 1：LangGraph 状态图与 interrupt 审批、诊断/草稿工具、多语模板骨架、demo 入口、指标与评测目录规划。',
-  },
-  {
     name: 'clash-auto-switch',
     desc: 'Clash 节点劣化自动切换 · 延迟+吞吐双检 · 本地看板 · MIT',
     url: 'https://github.com/GosuQuan/clash-auto-switch',

@@ -35,6 +35,30 @@ export function OpenSource() {
                   <BrandTag key={tag.label} label={tag.label} logo={tag.logo} />
                 ))}
               </div>
+              {item.howToRun || item.architecture ? (
+                <div className="mt-5 space-y-3 rounded-xl border border-white/10 bg-white/[0.03] p-3">
+                  {item.howToRun ? (
+                    <div>
+                      <p className="text-[11px] tracking-[0.16em] text-slate-500 uppercase">
+                        {os.howToRunLabel}
+                      </p>
+                      <p className="mt-1.5 font-mono text-xs leading-relaxed text-cyan-200/90 break-all">
+                        {item.howToRun}
+                      </p>
+                    </div>
+                  ) : null}
+                  {item.architecture ? (
+                    <div>
+                      <p className="text-[11px] tracking-[0.16em] text-slate-500 uppercase">
+                        {os.architectureLabel}
+                      </p>
+                      <p className="mt-1.5 font-mono text-xs leading-relaxed text-slate-300">
+                        {item.architecture}
+                      </p>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
               {item.highlights.length > 0 ? (
                 <div className="mt-5">
                   <p className="text-[11px] tracking-[0.16em] text-slate-500 uppercase">

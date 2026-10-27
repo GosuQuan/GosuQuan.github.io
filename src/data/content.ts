@@ -136,6 +136,25 @@ export const about = {
 
 export const openSource = [
   {
+    name: 'short-drama-video',
+    desc: 'Short Drama Video / AI 短剧编排实验 · 分镜→prompt→双帧→短窗视频 · MIT',
+    url: 'https://github.com/GosuQuan/short-drama-video',
+    tags: [
+      { label: 'AI Video', logo: '/logos/tech/demo.svg' },
+      { label: 'Orchestration', logo: '/logos/tech/agent.svg' },
+      { label: 'Storyboard', logo: '/logos/tech/tools.svg' },
+    ],
+    howToRun: '浏览 examples/ 与 docs/orchestration-rooftop-neon-dance.md',
+    architecture: '分镜 Markdown → 文生图首/尾帧 → first+last frame 图生视频（~15s 9:16）',
+    highlights: [
+      'Storyboard → Prompt 结构化，换模型不换剧本结构',
+      '双帧锚定，减少纯文生视频漂移',
+      '15s 高光窗，可多段拼接',
+      '从爆款节奏学骨架，原创文案与分镜',
+    ],
+    contribution: '独立搭建编排笔记与示例分镜、样片资产目录与 orchestration 文档。',
+  },
+  {
     name: 'listing-ops-agent',
     desc: '跨境 Listing Ops Agent · LangGraph + 人工审批 · MIT',
     url: 'https://github.com/GosuQuan/listing-ops-agent',

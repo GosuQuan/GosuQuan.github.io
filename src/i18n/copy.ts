@@ -209,6 +209,26 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       architectureLabel: '架构',
       items: [
         {
+          name: 'short-drama-video',
+          desc: 'Short Drama Video / AI 短剧编排实验 · 分镜→prompt→双帧→短窗视频 · MIT',
+          url: 'https://github.com/GosuQuan/short-drama-video',
+          tags: [
+            { label: 'AI Video', logo: '/logos/tech/demo.svg' },
+            { label: 'Orchestration', logo: '/logos/tech/agent.svg' },
+            { label: 'Storyboard', logo: '/logos/tech/tools.svg' },
+          ],
+          howToRun: '浏览 examples/ 与 docs/orchestration-rooftop-neon-dance.md',
+          architecture: '分镜 Markdown → 文生图首/尾帧 → first+last frame 图生视频（~15s 9:16）',
+          highlights: [
+            'Storyboard → Prompt 结构化，换模型不换剧本结构',
+            '双帧锚定，减少纯文生视频漂移',
+            '15s 高光窗，可多段拼接',
+            '从爆款节奏学骨架，原创文案与分镜',
+          ],
+          contribution: '独立搭建编排笔记与示例分镜、样片资产目录与 orchestration 文档。',
+        },
+
+        {
           name: 'listing-ops-agent',
           desc: '跨境 Listing Ops Agent · LangGraph + 人工审批 · MIT',
           url: 'https://github.com/GosuQuan/listing-ops-agent',
@@ -376,6 +396,26 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       howToRunLabel: 'How to run',
       architectureLabel: 'Architecture',
       items: [
+        {
+          name: 'short-drama-video',
+          desc: 'Short Drama Video / AI short-drama orchestration lab · storyboard→prompt→dual-frame→clips · MIT',
+          url: 'https://github.com/GosuQuan/short-drama-video',
+          tags: [
+            { label: 'AI Video', logo: '/logos/tech/demo.svg' },
+            { label: 'Orchestration', logo: '/logos/tech/agent.svg' },
+            { label: 'Storyboard', logo: '/logos/tech/tools.svg' },
+          ],
+          howToRun: 'Browse examples/ and docs/orchestration-rooftop-neon-dance.md',
+          architecture: 'Storyboard Markdown → text-to-image first/last frames → first+last-frame image-to-video (~15s 9:16)',
+          highlights: [
+            'Storyboard → Prompt structure so you can swap models without rewriting the script shape',
+            'Dual-frame anchoring to cut pure text-to-video drift',
+            '15s highlight windows you can stitch into longer cuts',
+            'Learn pacing skeletons from hits; keep copy and storyboard original',
+          ],
+          contribution: 'Solo: orchestration notes, sample storyboards, sample-asset layout, and orchestration docs.',
+        },
+
         {
           name: 'listing-ops-agent',
           desc: 'Cross-border Listing Ops Agent · LangGraph + human approve · MIT',

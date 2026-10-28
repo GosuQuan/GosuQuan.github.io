@@ -209,6 +209,26 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       architectureLabel: '架构',
       items: [
         {
+          name: 'flask-fullstack-starter',
+          desc: 'Flask 全栈可用商城 · 前台下单 + 后台类目/商品/订单 · Postgres/Redis · 仅 Repo 本地可跑',
+          url: 'https://github.com/GosuQuan/flask-fullstack-starter',
+          tags: [
+            { label: 'Python / Flask', logo: '/logos/tech/python.svg' },
+            { label: 'Redis', logo: '/logos/tech/redis.svg' },
+            { label: 'Observability', logo: '/logos/tech/observability.svg' },
+          ],
+          howToRun: '需 Postgres + Redis；pip install -r requirements.txt && python run.py → /shop · /admin/',
+          architecture: 'shop + admin → services → Postgres；Redis 目录缓存 / 结账幂等；Locust + chaos 文档',
+          highlights: [
+            '服务层薄路由：前台购物与后台类目/商品/订单/用户，订单状态机 + activity_logs 审计',
+            '结账幂等（Redis SET NX）+ FOR UPDATE 扣库存，防超卖与重复提交',
+            'Redis 目录缓存，宕机自动降级 DB；管理端可触发 Redis Down 等 chaos',
+            'Locust 压测结果入仓（本地 smoke ~287 RPS / 0 fail，注明非生产 WSGI）',
+          ],
+          contribution:
+            '独立搭建可用商城：前台购物与后台 CRUD、Redis 缓存与结账幂等、chaos 开关与 Locust 压测文档。',
+        },
+        {
           name: 'short-drama-video',
           desc: 'Short Drama Video / AI 短剧编排实验 · 分镜→prompt→双帧→短窗视频 · MIT',
           url: 'https://github.com/GosuQuan/short-drama-video',
@@ -396,6 +416,26 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       howToRunLabel: 'How to run',
       architectureLabel: 'Architecture',
       items: [
+        {
+          name: 'flask-fullstack-starter',
+          desc: 'Flask full-stack mall · shop checkout + admin CRUD · Postgres/Redis · repo-only (local run)',
+          url: 'https://github.com/GosuQuan/flask-fullstack-starter',
+          tags: [
+            { label: 'Python / Flask', logo: '/logos/tech/python.svg' },
+            { label: 'Redis', logo: '/logos/tech/redis.svg' },
+            { label: 'Observability', logo: '/logos/tech/observability.svg' },
+          ],
+          howToRun: 'Needs Postgres + Redis; pip install -r requirements.txt && python run.py → /shop · /admin/',
+          architecture: 'shop + admin → services → Postgres; Redis catalog cache / checkout idempotency; Locust + chaos docs',
+          highlights: [
+            'Thin routes + service layer: shop + admin catalog/orders/users, order state machine + activity_logs audit',
+            'Checkout idempotency (Redis SET NX) + FOR UPDATE stock locks against oversell/dupes',
+            'Redis catalog cache with automatic DB fallback; admin chaos toggles (e.g. Redis Down)',
+            'Documented Locust load tests (local smoke ~287 RPS / 0 fail; not production WSGI)',
+          ],
+          contribution:
+            'Solo: usable mall with shop + admin CRUD, Redis cache and checkout idempotency, chaos toggles, and Locust load-test docs.',
+        },
         {
           name: 'short-drama-video',
           desc: 'Short Drama Video / AI short-drama orchestration lab · storyboard→prompt→dual-frame→clips · MIT',

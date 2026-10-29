@@ -136,6 +136,46 @@ export const about = {
 
 export const openSource = [
   {
+    name: 'goforge',
+    desc: 'Go Coding-Agent Harness · ReAct + 状态图编排 + RAG · 单二进制离线可跑 · MIT',
+    url: 'https://github.com/GosuQuan/goforge',
+    tags: [
+      { label: 'Go', logo: '/logos/tech/tools.svg' },
+      { label: 'LangGraph-style', logo: '/logos/tech/agent.svg' },
+      { label: 'RAG', logo: '/logos/tech/rag.svg' },
+    ],
+    howToRun: 'make build && ./bin/goforge index --dir testdata/sample-repo && ./bin/goforge run --mock --dir testdata/sample-repo "…"',
+    architecture: 'CLI → Harness → ReAct agent / StateGraph+checkpoint / RAG / tools（workspace 根约束）',
+    highlights: [
+      '纯 Go 落地 ReAct 循环 + 状态图（节点 / 条件边 / 环 / 检查点 / interrupt）',
+      'RAG 可插拔：切块 → 嵌入 → 向量库（内存余弦 / chromem-go）',
+      '--mock 确定性 Demo 客户端，CI 与离线演示不依赖网络',
+      'HITL：guard interrupt + resume，审批写文件 / shell 后再继续',
+    ],
+    contribution:
+      '独立从 0 到 1：agent / graph / rag / tools 四包 + CLI、离线 mock 与测试。',
+  },
+  {
+    name: 'one-in-eight-billion',
+    desc: '80亿分之1 · 可玩网页人生模拟 · 在线试玩（Pages）· 无后端 · MIT',
+    url: 'https://gosuquan.github.io/one-in-eight-billion/',
+    tags: [
+      { label: 'JavaScript', logo: '/logos/tech/javascript.svg' },
+      { label: 'Demo', logo: '/logos/tech/demo.svg' },
+      { label: 'GitHub', logo: '/logos/tech/github.svg' },
+    ],
+    howToRun: '在线：gosuquan.github.io/one-in-eight-billion/ ；本地 npm start → :4173',
+    architecture: '纯前端 ES modules · 本地存档 · 无账号 / 无后端',
+    highlights: [
+      '40 国加权抽样起点 + 完整人生循环与随机事件',
+      '投资 / 旅行 / 有后果的年度重心选择',
+      'GIF 演示 + 可点九阶段原型、手机适配',
+      'Playwright 浏览器与特性回归；Repo：GosuQuan/one-in-eight-billion',
+    ],
+    contribution:
+      '独立实现交互原型、模拟引擎、演示素材与 GitHub Pages 部署。',
+  },
+  {
     name: 'flask-fullstack-starter',
     desc: 'Flask 全栈可用商城 · 前台下单 + 后台类目/商品/订单 · Postgres/Redis · 仅 Repo 本地可跑',
     url: 'https://github.com/GosuQuan/flask-fullstack-starter',

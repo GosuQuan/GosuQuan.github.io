@@ -176,6 +176,27 @@ export const openSource = [
       '独立实现交互原型、模拟引擎、演示素材与 GitHub Pages 部署。',
   },
   {
+    name: 'amazon-ppc-keyword-optimizer',
+    desc: '亚马逊 PPC 关键词优化 · 本地规则引擎 + 专家 AI 双引擎 · FastAPI+SPA · 仅 Repo 本地可跑 · MIT',
+    url: 'https://github.com/GosuQuan/amazon-ppc-keyword-optimizer',
+    tags: [
+      { label: 'Python / FastAPI', logo: '/logos/tech/python.svg' },
+      { label: 'Agent', logo: '/logos/tech/agent.svg' },
+      { label: 'GitHub', logo: '/logos/tech/github.svg' },
+    ],
+    howToRun: 'cd backend && pip install -r requirements.txt && python -m uvicorn app.main:app --host 127.0.0.1 --port 8787',
+    architecture: 'SPA → FastAPI → engine（parser/classify/rules/mining）→ 导出；可选专家 Agent JSON 合并',
+    highlights: [
+      '七级分级 + 允许预算 / 调价 / 收割 / 互搏 / 否定规则引擎',
+      'CSV 防御解析：双语表头、货币千分位、脏行与空文件',
+      '词根 n-gram 归因与组合扩展；5 类清单 CSV 导出',
+      'R-T0 回归边界 + pytest 26 用例（引擎 + API）',
+      '默认无需模型 Key：导出优秀词 → 专家 Agent → 导入 JSON 合并校验',
+    ],
+    contribution:
+      '独立把单文件工具升级为前后端工程：引擎下沉 FastAPI、SPA、R-T0 自检与专家 Agent 导入契约。',
+  },
+  {
     name: 'flask-fullstack-starter',
     desc: 'Flask 全栈可用商城 · 前台下单 + 后台类目/商品/订单 · Postgres/Redis · 仅 Repo 本地可跑',
     url: 'https://github.com/GosuQuan/flask-fullstack-starter',
@@ -216,24 +237,24 @@ export const openSource = [
   },
   {
     name: 'listing-ops-agent',
-    desc: '跨境 Listing Ops Agent · LangGraph + 人工审批 · MIT',
+    desc: '跨境 Listing Ops Agent · LangGraph + HITL 审批 + 本地 RAG · MIT',
     url: 'https://github.com/GosuQuan/listing-ops-agent',
     tags: [
       { label: 'Python', logo: '/logos/tech/python.svg' },
       { label: 'LangGraph / Agent', logo: '/logos/tech/agent.svg' },
-      { label: 'Tool Calling', logo: '/logos/tech/tools.svg' },
+      { label: 'RAG', logo: '/logos/tech/rag.svg' },
     ],
     howToRun: 'pip install -r requirements.txt && python demo.py（输入 approve 导出 JSON）',
-    architecture: 'diagnose → draft → human_approve(interrupt) → export（MemorySaver checkpoint）',
+    architecture: 'diagnose → draft → human_approve(interrupt) → export（MemorySaver）；旁路 rag/ Chroma 指南检索',
     highlights: [
       'HITL：必须 Approve 才导出，草稿不能直出',
       '确定性诊断 / 草稿工具，LLM 可替换',
-      '目标把磨稿压到「分钟级草稿 + 短审批」（目标表述，非客户 ROI）',
+      '本地 RAG：指南/禁限词切块 → Chroma → top-k（可选 lexical re-rank）',
       '可测 diagnose_ms / draft_ms、审批率与规则命中',
       '不直连平台写操作，只导出 + 审计边界',
     ],
     contribution:
-      '独立从 0 到 1：LangGraph 状态图与 interrupt 审批、诊断/草稿工具、多语模板骨架、demo 入口、指标与评测目录规划。',
+      '独立从 0 到 1：LangGraph 状态图与 interrupt 审批、诊断/草稿工具、多语模板、本地 RAG mini-demo、demo 入口与评测目录。',
   },
   {
     name: 'clash-auto-switch',

@@ -157,7 +157,7 @@ export const openSource = [
   },
   {
     name: 'one-in-eight-billion',
-    desc: '80亿分之1 · 可玩网页人生模拟 · 文化池与动态家庭 · 在线试玩（Pages）· 无后端 · MIT',
+    desc: '80亿分之1 · 可玩网页人生模拟 · 事件分层与动态家庭 · 在线试玩（Pages）· 无后端 · MIT',
     url: 'https://gosuquan.github.io/one-in-eight-billion/',
     tags: [
       { label: 'JavaScript', logo: '/logos/tech/javascript.svg' },
@@ -168,9 +168,9 @@ export const openSource = [
     architecture: '纯前端 ES modules · 本地存档 · 无账号 / 无后端',
     highlights: [
       '无后端本地存档与旧档迁移；确定性种子可复现整段人生',
-      '40 国加权出生 + 十国文化事件池 / 年内小事 / 分层死因',
-      '投资·房产·旅行叠加家庭照护、宠物、迁居团聚等有状态后果系统',
-      '引擎 38 项种子回归 + Playwright 桌面/手机主流程与动态场景',
+      '40 国加权出生 + 十国文化日常池 / 事件三层级 / 分层死因',
+      '投资·房产·旅行叠加家庭照护、关系重分支、危机帮人、迁居团聚等有状态后果',
+      '149 项引擎单测 + e2e 单局/多世界观冒烟（时代×出生模式）',
       'GIF 演示 + 可点原型、手机适配；Repo：GosuQuan/one-in-eight-billion',
     ],
     contribution:

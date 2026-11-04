@@ -242,12 +242,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           highlights: [
             '无后端本地存档与旧档迁移；确定性种子可复现整段人生',
             '40 国加权出生 + 十国文化日常池 / 事件三层级 / 分层死因',
-            '投资·房产·旅行叠加家庭照护、关系重分支、危机帮人、迁居团聚等有状态后果',
-            '149 项引擎单测 + e2e 单局/多世界观冒烟（时代×出生模式）',
+            '投资·房产·旅行叠加家庭照护、关系重分支、危机帮人、迁居团聚；终局回顾含最幸福一年 / 成年时间分配 / 具名爱好',
+            '149 项引擎单测 + CDP e2e（单局 / 多世界观 + 空弹窗·超长文案·undefined 质量断言，e2e:all）',
             'GIF 演示 + 可点原型、手机适配；Repo：GosuQuan/one-in-eight-billion',
           ],
           contribution:
-            '独立实现模拟引擎、文化/家庭等人生系统、交互原型、演示素材、回归测试与 GitHub Pages 部署。',
+            '独立实现模拟引擎、文化/家庭等人生系统、交互原型、演示素材、CDP e2e 质量回归与 GitHub Pages 部署。',
         },
         {
           name: 'amazon-ppc-keyword-optimizer',
@@ -512,12 +512,12 @@ export const siteCopy: Record<Locale, SiteCopy> = {
           highlights: [
             'Local saves + legacy migration; deterministic seeds replay a whole life',
             'Weighted birth across 40 countries + 10-country culture dailies / three-tier events / layered endings',
-            'Investing, housing, travel stacked with family care, heavy relationship branches, crisis aid, migration & reunion',
-            '149 engine unit tests + e2e single-life / multi-world smoke (era × birth mode)',
+            'Investing, housing, travel stacked with family care, heavy relationship branches, crisis aid, migration & reunion; ending memorial: happiest year / adult time-spend / named hobbies',
+            '149 engine unit tests + CDP e2e (single-life / multi-world + empty-modal · long-copy · undefined quality asserts, e2e:all)',
             'GIF walkthrough + clickable prototype, mobile-ready; Repo: GosuQuan/one-in-eight-billion',
           ],
           contribution:
-            'Solo: sim engine, culture/family life systems, prototype, demo assets, regression suite, and GitHub Pages deploy.',
+            'Solo: sim engine, culture/family life systems, prototype, demo assets, CDP e2e quality suite, and GitHub Pages deploy.',
         },
         {
           name: 'amazon-ppc-keyword-optimizer',

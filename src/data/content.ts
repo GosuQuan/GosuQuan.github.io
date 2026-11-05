@@ -157,7 +157,7 @@ export const openSource = [
   },
   {
     name: 'one-in-eight-billion',
-    desc: '80亿分之1 · 可玩网页人生模拟 · 事件分层与动态家庭 · 在线试玩（Pages）· 无后端 · MIT',
+    desc: '80亿分之1 · 可玩网页人生模拟 · 阶段侧栏与事件分层 · 在线试玩（Pages）· 无后端 · MIT',
     url: 'https://gosuquan.github.io/one-in-eight-billion/',
     tags: [
       { label: 'JavaScript', logo: '/logos/tech/javascript.svg' },
@@ -168,13 +168,13 @@ export const openSource = [
     architecture: '纯前端 ES modules · 本地存档 · 无账号 / 无后端',
     highlights: [
       '无后端本地存档与旧档迁移；确定性种子可复现整段人生',
-      '40 国加权出生 + 十国文化日常池 / 事件三层级 / 分层死因',
-      '投资·房产·旅行叠加家庭照护、关系重分支、危机帮人、迁居团聚；终局回顾含最幸福一年 / 成年时间分配 / 具名爱好',
-      '149 项引擎单测 + CDP e2e（单局 / 多世界观 + 空弹窗·超长文案·undefined 质量断言，e2e:all）',
-      'GIF 演示 + 可点原型、手机适配；Repo：GosuQuan/one-in-eight-billion',
+      '40 国加权出生 + 十国文化日常（谁·在哪·做了什么）/ 事件三层级 / 两行制纪录（抉择 + 后果原文）',
+      '「这个阶段」侧栏（童年家庭 / 求学进度 / 成年收入位次 / 晚年生计与身边人）；阶段判定下沉 engine 可测',
+      '投资·房产·旅行叠加家庭照护与关系重分支；终局回顾含最幸福一年 / 成年时间分配 / 具名爱好',
+      '150 项引擎单测 + CDP e2e（单局 / 多世界观 + 空弹窗·超长文案·undefined 质量断言，e2e:all）',
     ],
     contribution:
-      '独立实现模拟引擎、文化/家庭等人生系统、交互原型、演示素材、CDP e2e 质量回归与 GitHub Pages 部署。',
+      '独立实现模拟引擎、阶段侧栏、文化/家庭等人生系统、交互原型、演示素材、CDP e2e 质量回归与 GitHub Pages 部署。',
   },
   {
     name: 'amazon-ppc-keyword-optimizer',
